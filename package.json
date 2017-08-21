@@ -1,8 +1,8 @@
 {
-  "name": "test-ionic-app",
+  "name": "e-briefing-app",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Canadian Digital Service",
+  "homepage": "https://digital.canada.ca",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
