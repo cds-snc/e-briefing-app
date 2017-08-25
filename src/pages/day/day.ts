@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DayProvider } from '../../providers/day/day';
+import { EventPage } from '../../pages/event/event';
 
 /**
  * Generated class for the DayPage page.
@@ -25,10 +26,14 @@ export class DayPage {
   loadDay() {
     this.dayProvider.load(this.navParams.get('day'))
         .then(data => {
-            console.log(data);
           this.events = data['events'];
-          console.log(this.events);
         });
+  }
+
+  setEvent(id) {
+      this.navCtrl.push(EventPage, {
+          event: id
+      });
   }
 
   ionViewDidLoad() {

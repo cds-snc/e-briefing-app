@@ -9,12 +9,15 @@ import { ContactsPage } from '../pages/contacts/contacts';
 import { DocumentsPage } from '../pages/documents/documents';
 import { DaysPage } from '../pages/days/days';
 import { DayPage } from '../pages/day/day';
+import { EventPage } from '../pages/event/event';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DaysProvider } from '../providers/days/days';
 import { DayProvider } from '../providers/day/day';
+import { EventsProvider } from '../providers/events/events';
+import { EventProvider } from '../providers/event/event';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { DayProvider } from '../providers/day/day';
     DocumentsPage,
     DaysPage,
     DayPage,
-    TabsPage
+    TabsPage,
+    EventPage
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,7 @@ import { DayProvider } from '../providers/day/day';
     DocumentsPage,
     DaysPage,
     DayPage,
+    EventPage,
     TabsPage
   ],
   providers: [
@@ -46,7 +51,9 @@ import { DayProvider } from '../providers/day/day';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DaysProvider,
-    DayProvider
+    DayProvider,
+    EventsProvider,
+    EventProvider
   ]
 })
 export class AppModule {}

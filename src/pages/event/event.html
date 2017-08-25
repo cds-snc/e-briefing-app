@@ -1,0 +1,33 @@
+
+  <ion-header>
+    <ion-navbar>
+      <ion-title>Event details</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+    <div *ngIf="event">
+      <ion-card>
+        <ion-card-header>
+          <h2>{{ event.time_from }} - {{ event.time_to }}</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <h2>{{ event.title }}</h2>
+          <p>{{ event.location_name }}<span *ngIf="event.location_address">, {{ event.location_address }}</span><span *ngIf="event.location_postal">, {{ event.location_postal }}</span></p>
+
+          <p>{{ event.description }}</p>
+
+          <div *ngIf="event.participants">
+            <ul class="participants">
+              <li *ngFor="let person of event.participants">
+                {{ person.name }}
+              </li>
+            </ul>
+          </div>
+
+          <div [innerHTML]="event.body"></div>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>
