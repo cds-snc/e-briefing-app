@@ -35,9 +35,4 @@ export class DayPage {
           event: id
       });
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DayPage');
-  }
-
 }

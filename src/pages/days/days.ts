@@ -24,7 +24,6 @@ export class DaysPage {
   }
 
   goToDayPage(id) {
-    console.log(id);
     this.navCtrl.push(DayPage, {
         day: id
     });
