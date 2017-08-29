@@ -22,6 +22,7 @@ import { DocumentsProvider } from '../providers/documents/documents';
 import { ArticlesProvider } from '../providers/articles/articles';
 import { ArticleProvider } from '../providers/article/article';
 import {ArticlePage} from "../pages/article/article";
+import { ContactsProvider } from '../providers/contacts/contacts';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import {ArticlePage} from "../pages/article/article";
     EventProvider,
     DocumentsProvider,
     ArticlesProvider,
-    ArticleProvider
+    ArticleProvider,
+    ContactsProvider
   ]
 })
 export class AppModule {}
