@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list inset>
-    <ion-item *ngFor="let event of events" (click)="setEvent(event.id)">
+    <ion-item text-wrap *ngFor="let event of events" (click)="setEvent(event.id)">
       <p>{{ event.time_from }} - {{ event.time_to }}</p>
       <h2>{{ event.title }}</h2>
       <p>{{ event.location_name }}</p>
