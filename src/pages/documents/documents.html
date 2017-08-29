@@ -14,6 +14,7 @@
             </ion-item-divider>
             <button ion-item text-wrap *ngFor="let document of documents[key]" (click)="showDocument(document.id)">
                 {{ document.name }}
+                <ion-icon name="arrow-forward" item-end></ion-icon>
             </button>
         </div>
     </ion-list>

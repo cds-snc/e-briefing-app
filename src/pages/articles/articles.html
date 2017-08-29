@@ -10,6 +10,7 @@
   <ion-list inset>
     <button ion-item *ngFor="let article of articles" (click)="showArticle(article.id)">
       {{ article.title }}
+      <ion-icon name="arrow-forward" item-end></ion-icon>
     </button>
   </ion-list>
 </ion-content>
