@@ -8,11 +8,11 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header>person</ion-list-header>
     <a ion-item *ngFor="let contact of contacts" (click)="showContact(contact.id)">
-      <ion-avatar item-start *ngIf="contact.image">
+      <ion-avatar item-start *ngIf="contact.image;else elseBlock">
         <img src="data/assets/{{ contact.image }}">
       </ion-avatar>
+      <ng-template #elseBlock><ion-icon name="contact" item-start></ion-icon></ng-template>
       <h2>{{ contact.name }}</h2>
       <p><strong>{{ contact.title }}</strong><br>
         {{ contact.telephone }}</p>
