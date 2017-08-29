@@ -8,9 +8,13 @@
 
 <ion-content>
     <ion-list>
-        <ion-list-header>Documents</ion-list-header>
-        <ion-item>
-            Documents...
-        </ion-item>
+        <div *ngFor="let key of keys">
+            <ion-item-divider>
+                {{ key }}
+            </ion-item-divider>
+            <button ion-item text-wrap *ngFor="let document of documents[key]" (click)="showDocument(document.id)">
+                {{ document.name }}
+            </button>
+        </div>
     </ion-list>
 </ion-content>

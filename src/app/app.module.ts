@@ -18,6 +18,7 @@ import { DaysProvider } from '../providers/days/days';
 import { DayProvider } from '../providers/day/day';
 import { EventsProvider } from '../providers/events/events';
 import { EventProvider } from '../providers/event/event';
+import { DocumentsProvider } from '../providers/documents/documents';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { EventProvider } from '../providers/event/event';
     DaysProvider,
     DayProvider,
     EventsProvider,
-    EventProvider
+    EventProvider,
+    DocumentsProvider
   ]
 })
 export class AppModule {}
