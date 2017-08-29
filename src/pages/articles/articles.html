@@ -1,11 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Articles
+      My Trip
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list inset>
+    <button ion-item *ngFor="let article of articles" (click)="showArticle(article.id)">
+      {{ article.title }}
+    </button>
+  </ion-list>
 </ion-content>

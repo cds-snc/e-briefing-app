@@ -19,10 +19,14 @@ import { DayProvider } from '../providers/day/day';
 import { EventsProvider } from '../providers/events/events';
 import { EventProvider } from '../providers/event/event';
 import { DocumentsProvider } from '../providers/documents/documents';
+import { ArticlesProvider } from '../providers/articles/articles';
+import { ArticleProvider } from '../providers/article/article';
+import {ArticlePage} from "../pages/article/article";
 
 @NgModule({
   declarations: [
     MyApp,
+    ArticlePage,
     ArticlesPage,
     ContactsPage,
     DocumentsPage,
@@ -45,7 +49,8 @@ import { DocumentsProvider } from '../providers/documents/documents';
     DaysPage,
     DayPage,
     EventPage,
-    TabsPage
+    TabsPage,
+    ArticlePage
   ],
   providers: [
     StatusBar,
@@ -55,7 +60,9 @@ import { DocumentsProvider } from '../providers/documents/documents';
     DayProvider,
     EventsProvider,
     EventProvider,
-    DocumentsProvider
+    DocumentsProvider,
+    ArticlesProvider,
+    ArticleProvider
   ]
 })
 export class AppModule {}
