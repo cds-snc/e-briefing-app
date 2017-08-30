@@ -6,13 +6,13 @@
 
 <ion-content>
     <ion-list *ngIf="day">
-        <ion-item text-wrap *ngFor="let event of day.events" (click)="setEvent(event.id)">
+        <a ion-item text-wrap *ngFor="let event of day.events" (click)="setEvent(event.id)">
             <p>{{ event.time_from }} - {{ event.time_to }}</p>
             <h2>{{ event.title }}</h2>
             <p>{{ event.location_name }}</p>
             <p>{{ event.description }}</p>
             <ion-icon name="arrow-forward" item-end></ion-icon>
-        </ion-item>
+        </a>
     </ion-list>
 </ion-content>
 ]
