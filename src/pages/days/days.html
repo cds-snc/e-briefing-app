@@ -1,13 +1,13 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Schedule</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Schedule</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <a href="#" class="day" *ngFor="let day of days" (click)="goToDayPage(day.id)">
-    <span class="heading">{{ day.name }}</span><br>
-    <span class="date">{{ day.date }}</span>
-  </a>
+    <a href="#" class="day" *ngFor="let day of days" (click)="goToDayPage(day.id)">
+        <span class="heading">{{ day.name }}</span><br>
+        <span class="date">{{ day.date }}</span>
+    </a>
 </ion-content>
