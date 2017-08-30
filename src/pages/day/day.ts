@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 import {EventPage} from '../../pages/event/event';
 import {DaysProvider} from "../../providers/days/days";
 
-@IonicPage()
 @Component({
     selector: 'page-day',
     templateUrl: 'day.html',

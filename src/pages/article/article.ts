@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 import {ArticlesProvider} from "../../providers/articles/articles";
 
-@IonicPage()
 @Component({
     selector: 'page-article',
     templateUrl: 'article.html',
@@ -21,9 +20,4 @@ export class ArticlePage {
                 this.article = data;
             });
     }
-
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad ArticlePage');
-    }
-
 }
