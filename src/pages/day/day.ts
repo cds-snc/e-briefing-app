@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DayProvider } from '../../providers/day/day';
 import { EventPage } from '../../pages/event/event';
+import {DaysProvider} from "../../providers/days/days";
 
 /**
  * Generated class for the DayPage page.
@@ -19,12 +19,12 @@ export class DayPage {
 
   public events: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private dayProvider: DayProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private daysProvider: DaysProvider) {
     this.loadDay();
   }
 
   loadDay() {
-    this.dayProvider.load(this.navParams.get('day'))
+    this.daysProvider.get(this.navParams.get('day'))
         .then(data => {
           this.events = data['events'];
         });

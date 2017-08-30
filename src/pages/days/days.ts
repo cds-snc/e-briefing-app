@@ -17,7 +17,7 @@ export class DaysPage {
   }
 
   loadDays() {
-    this.daysProvider.load()
+    this.daysProvider.all()
         .then(data => {
           this.days = data;
         });

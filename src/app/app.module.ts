@@ -15,7 +15,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DaysProvider } from '../providers/days/days';
-import { DayProvider } from '../providers/day/day';
 import { EventsProvider } from '../providers/events/events';
 import { EventProvider } from '../providers/event/event';
 import { DocumentsProvider } from '../providers/documents/documents';
@@ -60,7 +59,6 @@ import {ContactPage} from "../pages/contact/contact";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DaysProvider,
-    DayProvider,
     EventsProvider,
     EventProvider,
     DocumentsProvider,
