@@ -14,5 +14,9 @@
 
 
 <ion-content padding>
-  <div *ngIf="article" [innerHTML]="article.body"></div>
+  <ion-card *ngIf="article">
+    <ion-card-content>
+      <div [innerHTML]="article.body"></div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

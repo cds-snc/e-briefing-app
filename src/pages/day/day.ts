@@ -17,7 +17,7 @@ import {DaysProvider} from "../../providers/days/days";
 })
 export class DayPage {
 
-  public events: any;
+    public day: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private daysProvider: DaysProvider) {
     this.loadDay();
@@ -26,7 +26,7 @@ export class DayPage {
   loadDay() {
     this.daysProvider.get(this.navParams.get('day'))
         .then(data => {
-          this.events = data['events'];
+          this.day = data;
         });
   }
 

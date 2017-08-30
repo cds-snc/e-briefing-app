@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-list>
     <button ion-item *ngFor="let article of articles" (click)="showArticle(article.id)">
       {{ article.title }}

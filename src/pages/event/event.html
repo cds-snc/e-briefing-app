@@ -1,7 +1,7 @@
 
   <ion-header>
     <ion-navbar>
-      <ion-title>Event details</ion-title>
+      <ion-title *ngIf="event">{{ event.title }}</ion-title>
     </ion-navbar>
   </ion-header>
 

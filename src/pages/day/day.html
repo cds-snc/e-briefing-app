@@ -1,12 +1,12 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Day</ion-title>
+    <ion-title *ngIf="day">{{ day.name }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list inset>
-    <ion-item text-wrap *ngFor="let event of events" (click)="setEvent(event.id)">
+  <ion-list *ngIf="day">
+    <ion-item text-wrap *ngFor="let event of day.events" (click)="setEvent(event.id)">
       <p>{{ event.time_from }} - {{ event.time_to }}</p>
       <h2>{{ event.title }}</h2>
       <p>{{ event.location_name }}</p>

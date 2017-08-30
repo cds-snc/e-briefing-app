@@ -27,13 +27,12 @@
 
     <ion-card-content>
       <ul>
-        <li>{{ contact.telephone }}</li>
-        <li>{{ contact.email }}</li>
+        <li *ngIf="contact.telephone">{{ contact.telephone }}</li>
+        <li *ngIf="contact.email">{{ contact.email }}</li>
       </ul>
 
       <div [innerHTML]="contact.body"></div>
 
     </ion-card-content>
-
   </ion-card>
 </ion-content>
