@@ -20,7 +20,6 @@ import { EventsProvider } from '../providers/events/events';
 import { EventProvider } from '../providers/event/event';
 import { DocumentsProvider } from '../providers/documents/documents';
 import { ArticlesProvider } from '../providers/articles/articles';
-import { ArticleProvider } from '../providers/article/article';
 import {ArticlePage} from "../pages/article/article";
 import { ContactsProvider } from '../providers/contacts/contacts';
 import {ContactPage} from "../pages/contact/contact";
@@ -66,7 +65,6 @@ import {ContactPage} from "../pages/contact/contact";
     EventProvider,
     DocumentsProvider,
     ArticlesProvider,
-    ArticleProvider,
     ContactsProvider
   ]
 })

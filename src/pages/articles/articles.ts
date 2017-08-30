@@ -18,7 +18,7 @@ export class ArticlesPage {
 
   loadArticles()
   {
-    this.articlesProvider.load()
+    this.articlesProvider.all()
         .then(data => {
           this.articles = data;
         });

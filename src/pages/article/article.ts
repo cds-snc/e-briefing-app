@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {ArticleProvider} from "../../providers/article/article";
+import {ArticlesProvider} from "../../providers/articles/articles";
 
 /**
  * Generated class for the ArticlePage page.
@@ -18,12 +18,12 @@ export class ArticlePage {
 
   public article: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private articleProvider: ArticleProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private articlesProvider: ArticlesProvider) {
     this.loadArticle();
   }
 
   loadArticle() {
-    this.articleProvider.load(this.navParams.get('article'))
+    this.articlesProvider.get(this.navParams.get('article'))
         .then(data => {
           this.article = data;
         });
