@@ -11,7 +11,7 @@ export class ContactsProvider {
     this.data = null;
   }
 
-  load() {
+  all() {
     if (this.data) {
       return Promise.resolve(this.data);
     }
@@ -24,6 +24,17 @@ export class ContactsProvider {
             resolve(this.data);
           });
     })
+  }
+
+  get(id) {
+      return new Promise(resolve => {
+          this.http.get('data/people/' + id + '.json')
+              .map(res => res.json())
+              .subscribe(data => {
+                  this.data = data;
+                  resolve(this.data);
+              });
+      })
   }
 
 }

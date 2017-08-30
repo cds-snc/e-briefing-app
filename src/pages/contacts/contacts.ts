@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {ContactsProvider} from "../../providers/contacts/contacts";
+import {ContactPage} from "../contact/contact";
 
 @Component({
   selector: 'page-contacts',
@@ -15,14 +16,16 @@ export class ContactsPage {
   }
 
   loadContacts() {
-    this.contactsProvider.load()
+    this.contactsProvider.all()
         .then(data => {
           this.contacts = data;
         });
   }
 
   showContact(id) {
-    console.log(id);
+    this.navCtrl.push(ContactPage, {
+      contact: id
+    });
   }
 
 }

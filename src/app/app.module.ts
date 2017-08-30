@@ -23,6 +23,7 @@ import { ArticlesProvider } from '../providers/articles/articles';
 import { ArticleProvider } from '../providers/article/article';
 import {ArticlePage} from "../pages/article/article";
 import { ContactsProvider } from '../providers/contacts/contacts';
+import {ContactPage} from "../pages/contact/contact";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ContactsProvider } from '../providers/contacts/contacts';
     DaysPage,
     DayPage,
     TabsPage,
-    EventPage
+    EventPage,
+    ContactPage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { ContactsProvider } from '../providers/contacts/contacts';
     DayPage,
     EventPage,
     TabsPage,
-    ArticlePage
+    ArticlePage,
+    ContactPage
   ],
   providers: [
     StatusBar,
