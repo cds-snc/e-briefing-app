@@ -23,15 +23,9 @@ export class EventsPage {
   }
 
   loadEvents() {
-    this.eventsProvider.load(this.navParams.get('day'))
+    this.eventsProvider.getEventsForDay(this.navParams.get('day'))
         .then(data => {
           this.events = data['events'];
-          console.log(this.events);
         });
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EventsPage');
-  }
-
 }

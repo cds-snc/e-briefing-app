@@ -16,7 +16,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DaysProvider } from '../providers/days/days';
 import { EventsProvider } from '../providers/events/events';
-import { EventProvider } from '../providers/event/event';
 import { DocumentsProvider } from '../providers/documents/documents';
 import { ArticlesProvider } from '../providers/articles/articles';
 import {ArticlePage} from "../pages/article/article";
@@ -60,7 +59,6 @@ import {ContactPage} from "../pages/contact/contact";
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DaysProvider,
     EventsProvider,
-    EventProvider,
     DocumentsProvider,
     ArticlesProvider,
     ContactsProvider
