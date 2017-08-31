@@ -10,7 +10,7 @@
             <p>{{ event.time_from }} - {{ event.time_to }}</p>
             <h2>{{ event.title }}</h2>
             <p>{{ event.location_name }}</p>
-            <p>{{ event.description }}</p>
+            <div [innerHTML]="event.description_html"></div>
         </a>
     </ion-list>
 </ion-content>
