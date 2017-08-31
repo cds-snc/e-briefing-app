@@ -16,7 +16,7 @@
                         *ngIf="event.location_address">, {{ event.location_address }}</span><span
                         *ngIf="event.location_postal">, {{ event.location_postal }}</span></p>
 
-                <p>{{ event.description }}</p>
+                <p [innerHTML]="event.description_html"></p>
 
                 <div *ngIf="event.participants">
                     <ul class="participants">
