@@ -6,20 +6,22 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content>
-    <ion-list>
-        <a ion-item *ngFor="let contact of contacts" (click)="showContact(contact.id)">
+<ion-content padding>
+    <ion-card>
+        <ion-list>
+            <a ion-item *ngFor="let contact of contacts" (click)="showContact(contact.id)">
 
-            <ion-avatar item-start *ngIf="contact.image;else elseBlock">
-                <img src="data/assets/{{ contact.image }}">
-            </ion-avatar>
-            <ng-template #elseBlock>
-                <ion-icon name="contact" item-start></ion-icon>
-            </ng-template>
+                <ion-avatar item-start *ngIf="contact.image;else elseBlock">
+                    <img src="data/assets/{{ contact.image }}">
+                </ion-avatar>
+                <ng-template #elseBlock>
+                    <ion-icon name="contact" item-start></ion-icon>
+                </ng-template>
 
-            <h2>{{ contact.name }}</h2>
-            <p><strong>{{ contact.title }}</strong><br>
-                {{ contact.telephone }}</p>
-        </a>
-    </ion-list>
+                <h2>{{ contact.name }}</h2>
+                <p><strong>{{ contact.title }}</strong><br>
+                    {{ contact.telephone }}</p>
+            </a>
+        </ion-list>
+    </ion-card>
 </ion-content>

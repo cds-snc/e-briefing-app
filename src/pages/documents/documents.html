@@ -6,15 +6,17 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content>
-    <ion-list>
-        <div *ngFor="let key of keys">
-            <ion-item-divider>
-                {{ key }}
-            </ion-item-divider>
-            <a ion-item text-wrap *ngFor="let document of documents[key]" (click)="showDocument(document.id)">
-                {{ document.name }}
-            </a>
-        </div>
-    </ion-list>
+<ion-content padding>
+    <ion-card>
+        <ion-list>
+            <div *ngFor="let key of keys">
+                <ion-item-divider>
+                    {{ key }}
+                </ion-item-divider>
+                <a ion-item text-wrap *ngFor="let document of documents[key]" (click)="showDocument(document.id)">
+                    {{ document.name }}
+                </a>
+            </div>
+        </ion-list>
+    </ion-card>
 </ion-content>

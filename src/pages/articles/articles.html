@@ -6,10 +6,12 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content>
-    <ion-list>
-        <button ion-item *ngFor="let article of articles" (click)="showArticle(article.id)">
-            {{ article.title }}
-        </button>
-    </ion-list>
+<ion-content padding>
+    <ion-card>
+        <ion-list>
+            <button ion-item *ngFor="let article of articles" (click)="showArticle(article.id)">
+                {{ article.title }}
+            </button>
+        </ion-list>
+    </ion-card>
 </ion-content>
