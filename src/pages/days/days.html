@@ -8,8 +8,10 @@
 
     <div class="days-container">
         <a href="#" class="day-container" *ngFor="let day of days" (click)="goToDayPage(day.id)">
-            <span class="day">{{ day.name }}</span><br>
-            <span class="date">{{ day.date }}</span>
+            <div class="inner-container">
+                <span class="day">{{ day.name }}</span><br>
+                <span class="date">{{ day.date }}</span>
+            </div>
         </a>
     </div>
 

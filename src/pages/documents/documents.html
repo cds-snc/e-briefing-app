@@ -10,9 +10,7 @@
     <ion-card class="body">
         <ion-list>
             <div *ngFor="let key of keys">
-                <h2>
-                    {{ key }}
-                </h2>
+                <h2>{{ key }}</h2>
                 <a ion-item text-wrap *ngFor="let document of documents[key]" (click)="showDocument(document.id)">
                     {{ document.name }}
                 </a>
