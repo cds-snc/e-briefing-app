@@ -4,10 +4,13 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="page-container" padding>
 
-    <a href="#" class="day" *ngFor="let day of days" (click)="goToDayPage(day.id)">
-        <span class="heading">{{ day.name }}</span><br>
-        <span class="date">{{ day.date }}</span>
-    </a>
+    <div class="days-container">
+        <a href="#" class="day-container" *ngFor="let day of days" (click)="goToDayPage(day.id)">
+            <span class="day">{{ day.name }}</span><br>
+            <span class="date">{{ day.date }}</span>
+        </a>
+    </div>
+
 </ion-content>
