@@ -40,5 +40,21 @@
                 </a>
             </ion-list>
         </ion-card>
+
+        <ion-card *ngIf="event.participants.length">
+            <h2>Participants</h2>
+            <a ion-item text-wrap *ngFor="let person of event.participants" (click)="showPerson(person.id)">
+                <ion-avatar item-start *ngIf="person.image;else elseBlock">
+                    <img src="data/assets/{{ person.image }}">
+                </ion-avatar>
+                <ng-template #elseBlock>
+                    <ion-icon name="contact" item-start></ion-icon>
+                </ng-template>
+
+                <h4>{{ person.name }}</h4>
+                <p><strong>{{ person.title }}</strong><br>
+                    {{ person.telephone }}</p>
+            </a>
+        </ion-card>
     </div>
 </ion-content>

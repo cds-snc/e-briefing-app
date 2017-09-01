@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {EventsProvider} from "../../providers/events/events";
+import {ContactPage} from "../contact/contact";
 
 @Component({
     selector: 'page-event',
@@ -23,5 +24,11 @@ export class EventPage {
 
     showDocument(id) {
         console.log(id);
+    }
+
+    showPerson(id) {
+        this.navCtrl.push(ContactPage, {
+            contact: id
+        });
     }
 }
