@@ -14,3 +14,35 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.card {
+  border-top: 6px solid #1B46BC;
+  padding: 2.5rem;
+}
+
+.body {
+  p, li {
+    color: #2d2d2d;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+  }
+  h1, h2, h3, h4 {
+    color: #1B46BC;
+    margin-top: 1.5rem;
+    margin-bottom: .5em;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+}

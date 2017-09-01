@@ -7,12 +7,12 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-card>
+    <ion-card class="body">
         <ion-list>
             <div *ngFor="let key of keys">
-                <ion-item-divider>
+                <h2>
                     {{ key }}
-                </ion-item-divider>
+                </h2>
                 <a ion-item text-wrap *ngFor="let document of documents[key]" (click)="showDocument(document.id)">
                     {{ document.name }}
                 </a>

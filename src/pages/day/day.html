@@ -8,10 +8,10 @@
     <ion-card>
         <ion-list *ngIf="day">
             <a ion-item text-wrap *ngFor="let event of day.events" (click)="setEvent(event.id)">
-                <p>{{ event.time_from }} - {{ event.time_to }}</p>
-                <h2>{{ event.title }}</h2>
+                <p>{{ event.time_from }}<span *ngIf="event.time_to"> - {{ event.time_to }}</span></p>
+                <h1>{{ event.title }}</h1>
                 <p>{{ event.location_name }}</p>
-                <div [innerHTML]="event.description_html"></div>
+                <div class="body" [innerHTML]="event.description_html"></div>
             </a>
         </ion-list>
     </ion-card>
