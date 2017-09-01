@@ -20,4 +20,8 @@ export class EventPage {
                 this.event = data;
             });
     }
+
+    showDocument(id) {
+        console.log(id);
+    }
 }

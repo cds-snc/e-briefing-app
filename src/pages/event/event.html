@@ -30,5 +30,16 @@
 
             </ion-card-content>
         </ion-card>
+
+        <ion-card *ngIf="event.documents.length">
+            <ion-list>
+                <ion-list-header>
+                    Documents
+                </ion-list-header>
+                <a ion-item text-wrap *ngFor="let document of event.documents" (click)="showDocument(document.id)">
+                    {{ document.name }}
+                </a>
+            </ion-list>
+        </ion-card>
     </div>
 </ion-content>
