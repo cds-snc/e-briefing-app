@@ -5,9 +5,10 @@ page-days {
   }
 
   .days-container {
-    margin-top: 5rem;
+    margin: 5rem auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     .day-container {
       height: 25rem;
       width: 25rem;
