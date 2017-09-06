@@ -8,10 +8,10 @@ page-days {
     margin-top: 5rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     .day-container {
       height: 25rem;
       width: 25rem;
+      margin: 2rem;
       background: rgba(#ddd, 0.85);
       border: #555 8px solid;
       box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
