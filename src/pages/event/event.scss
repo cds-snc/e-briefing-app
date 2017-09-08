@@ -1,7 +1,6 @@
-page-event {
-  h1 {
-    font-size: 3rem !important;
-    font-weight: 600 !important;
+page-event { 
+  .event-details .card-header h2 {
+    color: #aaa !important;
   }
   .participants {
     list-style-type: none;

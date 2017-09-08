@@ -6,7 +6,7 @@
 
 <ion-content padding>
     <div *ngIf="event">
-        <ion-card>
+        <ion-card class="event-details">
             <ion-card-header>
                 <h2>{{ event.time_from }}<span *ngIf="event.time_to"> - {{ event.time_to }}</span></h2>
             </ion-card-header>
@@ -33,12 +33,16 @@
         </ion-card>
 
         <ion-card *ngIf="event.documents.length" class="body">
-            <h2>Documents</h2>
+            <ion-card-header>
+                <h2>Documents</h2>
+            </ion-card-header>
+            
             <ion-list>
                 <a ion-item text-wrap *ngFor="let document of event.documents" (click)="showDocument(document.id)">
-                    {{ document.name }}
+                    <ion-icon name="document"></ion-icon> {{ document.name }}
                 </a>
             </ion-list>
+            
         </ion-card>
 
         <ion-card *ngIf="event.participants.length">

@@ -1,34 +1,29 @@
 <ion-header>
-
     <ion-navbar>
         <ion-title *ngIf="contact">{{ contact.name }}</ion-title>
     </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
     <ion-card *ngIf="contact">
-        <ion-item>
-            <ion-avatar item-start *ngIf="contact.image;else elseBlock">
+        <div class="contact-header">
+            <div *ngIf="contact.image" class="contact-photo">
                 <img src="data/assets/{{ contact.image }}">
-            </ion-avatar>
-            <ng-template #elseBlock>
-                <ion-icon name="contact" item-start></ion-icon>
-            </ng-template>
-
-            <h2>{{ contact.name }}</h2>
-            <p><strong>{{ contact.title }}</strong></p>
-        </ion-item>
-
+            </div>
+            <div class="contact-info">
+                <h1>{{ contact.name }}</h1>
+                <p><strong>{{ contact.title }}</strong></p>
+            </div>
+        </div>
+        
         <ion-card-content>
             <ul>
                 <li *ngIf="contact.telephone">{{ contact.telephone }}</li>
                 <li *ngIf="contact.email">{{ contact.email }}</li>
             </ul>
 
-            <div [innerHTML]="contact.body_html"></div>
-
+            <div class="body" [innerHTML]="contact.body_html"></div>
         </ion-card-content>
     </ion-card>
 </ion-content>

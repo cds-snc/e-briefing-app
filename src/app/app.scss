@@ -20,16 +20,18 @@
   padding: 2.5rem;
 }
 
-h2, h3, h4 {
-  color: #1B46BC !important;
-  margin-top: 1.5rem !important;
-  margin-bottom: .5em !important;
+h1 {
+  font-size: 3rem !important;
   font-weight: 600 !important;
 }
 
-h1 {
-  font-size: 2.5rem !important;
+h2, h3, h4 {
+  color: #1B46BC !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: .5rem !important;
+  font-weight: 600 !important;
 }
+
 h2 {
   font-size: 2rem !important;
 }
@@ -40,11 +42,17 @@ h4 {
   font-size: 1.5rem !important;
 }
 
+.card-header h2 {
+    margin: 0 !important;
+}
+
 .body {
+  p {
+    margin: 0 0 1.5rem 0;
+  }
   p, li {
     color: #2d2d2d;
     font-size: 1.7rem;
     line-height: 2.5rem;
   }
-  
 }

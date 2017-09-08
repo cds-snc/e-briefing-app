@@ -1,3 +1,15 @@
 page-contact {
+    img {
+        max-height: 15rem;
+        width: auto;
+        border-radius: 50%;
+    }
 
+    .contact-header {
+        display: flex;
+        align-items: center;
+        .contact-info {
+            margin-left: 2rem;
+        }
+    }
 }
