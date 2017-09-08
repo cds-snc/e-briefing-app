@@ -21,6 +21,7 @@ import { ArticlesProvider } from '../providers/articles/articles';
 import {ArticlePage} from "../pages/article/article";
 import { ContactsProvider } from '../providers/contacts/contacts';
 import {ContactPage} from "../pages/contact/contact";
+import { DocumentViewer } from '@ionic-native/document-viewer';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {ContactPage} from "../pages/contact/contact";
     EventsProvider,
     DocumentsProvider,
     ArticlesProvider,
-    ContactsProvider
+    ContactsProvider,
+    DocumentViewer
   ]
 })
 export class AppModule {}

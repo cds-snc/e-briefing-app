@@ -11,7 +11,7 @@ export class DocumentsProvider {
     this.data = null;
   }
 
-  load() {
+  all() {
     if (this.data) {
       return Promise.resolve(this.data);
     }
@@ -25,5 +25,16 @@ export class DocumentsProvider {
           });
     })
   }
+
+  get(id) {
+        return new Promise(resolve => {
+            this.http.get('data/documents/' + id + '.json')
+                .map(res => res.json())
+                .subscribe(data => {
+                    this.data = data;
+                    resolve(this.data);
+                });
+        })
+    }
 
 }
