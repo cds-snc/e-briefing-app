@@ -26,12 +26,6 @@ export class DocumentsPage {
             });
     }
 
-    docURL(file)
-    {
-        var baseUrl = location.href.replace("/index.html", "");
-        return baseUrl + "/" + file;
-    }
-
     showDocument(id) {
         var options = {
             title: 'PDF'
@@ -40,8 +34,8 @@ export class DocumentsPage {
         this.documentsProvider.get(id)
             .then(data => {
                 this.selected_document = data;
-                console.log(this.docURL('data/assets/' + this.selected_document.file));
-                this.document.viewDocument(this.docURL('data/assets/' + this.selected_document.file), 'application/pdf', options);
+                console.log('data/assets/' + this.selected_document.file);
+                this.document.viewDocument('data/assets/' + this.selected_document.file, 'application/pdf', options);
             });
 
         console.log(id);
