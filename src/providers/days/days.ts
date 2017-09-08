@@ -17,7 +17,7 @@ export class DaysProvider {
         }
 
         return new Promise(resolve => {
-            this.http.get('data/trip.json')
+            this.http.get('data/days.json')
                 .map(res => res.json())
                 .subscribe(data => {
                     this.data = data.days;
