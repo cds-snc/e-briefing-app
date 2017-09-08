@@ -34,13 +34,13 @@ export class DocumentsPage {
 
     showDocument(id) {
         var options = {
-            title: 'My PDF'
+            title: 'PDF'
         }
 
         this.documentsProvider.get(id)
             .then(data => {
                 this.selected_document = data;
-                console.log(this.docURL('data/' + this.selected_document.file));
+                console.log(this.docURL('data/assets/' + this.selected_document.file));
                 this.document.viewDocument(this.docURL('data/assets/' + this.selected_document.file), 'application/pdf', options);
             });
 
