@@ -20,7 +20,7 @@ export class DaysProvider {
             this.http.get('data/days.json')
                 .map(res => res.json())
                 .subscribe(data => {
-                    this.data = data.days;
+                    this.data = data;
                     resolve(this.data);
                 });
         })
