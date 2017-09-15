@@ -15,6 +15,24 @@ export class MyApp {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+
+        /*
+      this.file.checkDir(this.file.applicationDirectory, 'www/data')
+          .then((result) => {
+            console.log("directory exists: " + result);
+             if(result) {
+                 this.file.copyDir(this.file.applicationDirectory, 'www/data', this.file.dataDirectory, 'data')
+                     .then((result) => {
+                        console.log("Moved data directory: " + result);
+                     }, function (error) {
+                        console.log(error);
+                     });
+             }
+          }, function (error) {
+            console.log(error);
+          });
+          */
+
       statusBar.styleDefault();
       splashScreen.hide();
     });

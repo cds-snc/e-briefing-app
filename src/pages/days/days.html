@@ -1,7 +1,12 @@
 <ion-header>
-    <ion-navbar>
+    <ion-toolbar>
         <ion-title>Schedule</ion-title>
-    </ion-navbar>
+        <ion-buttons end>
+            <button ion-button icon-left (click)="syncData()">
+                <ion-icon name="refresh"></ion-icon> sync
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content class="page-container" padding>

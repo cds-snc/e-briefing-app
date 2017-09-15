@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {GlobalsProvider} from "../globals/globals";
 
 @Injectable()
 export class DaysProvider {
 
     data: any;
 
-    constructor(public http: Http) {
+    constructor(public http: Http, private globals: GlobalsProvider) {
         this.data = null;
     }
 
@@ -17,10 +18,12 @@ export class DaysProvider {
         }
 
         return new Promise(resolve => {
-            this.http.get('data/days.json')
+            this.http.get(this.globals.dataDirectory + 'data/days.json')
                 .map(res => res.json())
                 .subscribe(data => {
                     this.data = data;
+                    console.log("HUzzah");
+                    console.log(data);
                     resolve(this.data);
                 });
         })
@@ -28,7 +31,7 @@ export class DaysProvider {
 
     get(id) {
         return new Promise(resolve => {
-            this.http.get('data/days/' + id + '.json')
+            this.http.get(this.globals.dataDirectory + 'data/days/' + id + '.json')
                 .map(res => res.json())
                 .subscribe(data => {
                     this.data = data;

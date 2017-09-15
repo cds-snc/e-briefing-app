@@ -3,8 +3,9 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {GlobalsProvider} from "../globals/globals";
 
+
 @Injectable()
-export class ContactsProvider {
+export class TripProvider {
 
   data: any;
 
@@ -12,13 +13,13 @@ export class ContactsProvider {
     this.data = null;
   }
 
-  all() {
+  get() {
     if (this.data) {
       return Promise.resolve(this.data);
     }
 
     return new Promise(resolve => {
-      this.http.get(this.globals.dataDirectory + 'data/people.json')
+      this.http.get(this.globals.dataDirectory + 'data/trip.json')
           .map(res => res.json())
           .subscribe(data => {
             this.data = data;
@@ -27,15 +28,18 @@ export class ContactsProvider {
     })
   }
 
-  get(id) {
-      return new Promise(resolve => {
-          this.http.get(this.globals.dataDirectory + 'data/people/' + id + '.json')
-              .map(res => res.json())
-              .subscribe(data => {
-                  this.data = data;
-                  resolve(this.data);
-              });
-      })
+  /*
+  Always local file that gets installed
+   */
+  getUpdateUrl() {
+    return new Promise(resolve => {
+      this.http.get('data/trip.json')
+          .map(res => res.json())
+          .subscribe(data => {
+            this.data = data.update_url;
+            resolve(this.data);
+          });
+    })
   }
 
 }
