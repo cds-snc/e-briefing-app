@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {EventsProvider} from "../../providers/events/events";
 import {ContactPage} from "../contact/contact";
+import {DocumentsProvider} from "../../providers/documents/documents";
+import {DocumentViewer} from "@ionic-native/document-viewer";
 
 @Component({
     selector: 'page-event',
@@ -10,8 +12,9 @@ import {ContactPage} from "../contact/contact";
 export class EventPage {
 
     public event: any;
+    public selected_document: any;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private eventsProvider: EventsProvider) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, private eventsProvider: EventsProvider, private documentsProvider: DocumentsProvider, private document: DocumentViewer) {
         this.loadEvent();
     }
 
@@ -23,7 +26,15 @@ export class EventPage {
     }
 
     showDocument(id) {
-        console.log(id);
+        var options = {
+            title: 'PDF'
+        }
+
+        this.documentsProvider.get(id)
+            .then(data => {
+                this.selected_document = data;
+                this.document.viewDocument('data/assets/' + this.selected_document.file, 'application/pdf', options);
+            });
     }
 
     showPerson(id) {

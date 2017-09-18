@@ -34,10 +34,7 @@ export class DocumentsPage {
         this.documentsProvider.get(id)
             .then(data => {
                 this.selected_document = data;
-                console.log('data/assets/' + this.selected_document.file);
                 this.document.viewDocument('data/assets/' + this.selected_document.file, 'application/pdf', options);
             });
-
-        console.log(id);
     }
 }
