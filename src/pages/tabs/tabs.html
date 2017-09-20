@@ -1,6 +1,6 @@
 <ion-tabs>
   <ion-tab [root]="schedule" tabTitle="Schedule" tabIcon="calendar"></ion-tab>
   <ion-tab [root]="documents" tabTitle="Documents" tabIcon="copy"></ion-tab>
-  <ion-tab [root]="articles" tabTitle="My Trip" tabIcon="plane"></ion-tab>
+  <ion-tab [root]="articles" tabTitle="My Trip" tabIcon="plane" *ngIf="articlescnt"></ion-tab>
   <ion-tab [root]="contacts" tabTitle="Contacts" tabIcon="contacts"></ion-tab>
 </ion-tabs>
