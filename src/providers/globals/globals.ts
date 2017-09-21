@@ -1,28 +1,31 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {File} from "@ionic-native/file";
 import {Platform} from "ionic-angular";
+import {File} from "@ionic-native/file";
 
 
 @Injectable()
 export class GlobalsProvider {
 
-  dataDirectory: any;
+    dataDirectory: any;
 
-  constructor(public http: Http, private file: File, private platform: Platform) {
-    console.log("Hello globals");
+    constructor(public http: Http, private platform: Platform, private file: File) {
+        this.dataDirectory = '';
 
-    this.dataDirectory = '';
-
-    if (this.platform.is('ios')) {
-      // this.dataDirectory = this.file.dataDirectory;
+        platform.ready().then(() => {
+            // this.getDataDirectory();
+            if (this.platform.is('ios')) {
+                this.setDataDirectory(this.file.dataDirectory ? this.file.dataDirectory : '');
+            }
+        })
     }
 
-    console.log("Data directory: " + this.dataDirectory);
-  }
+    setDataDirectory(value) {
+        this.dataDirectory = value;
+    }
 
-  setDataDirectory() {
-
-  }
+    getDataDirectory() {
+        return this.dataDirectory;
+    }
 }

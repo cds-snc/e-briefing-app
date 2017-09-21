@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {GlobalsProvider} from "../globals/globals";
 
@@ -7,39 +7,38 @@ import {GlobalsProvider} from "../globals/globals";
 @Injectable()
 export class TripProvider {
 
-  data: any;
+    data: any;
 
-  constructor(public http: Http, private globals: GlobalsProvider) {
-    this.data = null;
-  }
-
-  get() {
-    if (this.data) {
-      return Promise.resolve(this.data);
+    constructor(public http: Http, private globals: GlobalsProvider) {
+        this.data = null;
     }
 
-    return new Promise(resolve => {
-      this.http.get(this.globals.dataDirectory + 'data/trip.json')
-          .map(res => res.json())
-          .subscribe(data => {
-            this.data = data;
-            resolve(this.data);
-          });
-    })
-  }
+    get() {
+        if (this.data) {
+            return Promise.resolve(this.data);
+        }
 
-  /*
-  Always local file that gets installed
-   */
-  getUpdateUrl() {
-    return new Promise(resolve => {
-      this.http.get('data/trip.json')
-          .map(res => res.json())
-          .subscribe(data => {
-            this.data = data.update_url;
-            resolve(this.data);
-          });
-    })
-  }
+        return new Promise(resolve => {
+            this.http.get(this.globals.dataDirectory + 'data/trip.json')
+                .map(res => res.json())
+                .subscribe(data => {
+                    this.data = data;
+                    resolve(this.data);
+                });
+        })
+    }
 
+    /*
+     Always local file that gets installed
+     */
+    getUpdateUrl() {
+        return new Promise(resolve => {
+            this.http.get('data/trip.json')
+                .map(res => res.json())
+                .subscribe(data => {
+                    this.data = data.update_url;
+                    resolve(this.data);
+                });
+        })
+    }
 }

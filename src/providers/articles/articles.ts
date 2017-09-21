@@ -24,7 +24,8 @@ export class ArticlesProvider {
                     this.data = data;
                     resolve(this.data);
                 });
-        })
+        });
+
     }
 
     get(id) {

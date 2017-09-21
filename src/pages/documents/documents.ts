@@ -5,8 +5,7 @@ import { DocumentViewer } from '@ionic-native/document-viewer';
 
 @Component({
     selector: 'page-documents',
-    templateUrl: 'documents.html',
-    providers: [DocumentsProvider]
+    templateUrl: 'documents.html'
 })
 export class DocumentsPage {
 

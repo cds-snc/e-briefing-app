@@ -1,25 +1,26 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, Platform} from 'ionic-angular';
 import {DaysProvider} from '../../providers/days/days';
 import {DayPage} from '../day/day';
 import {SyncProvider} from "../../providers/sync/sync";
 
 @Component({
     selector: 'page-days',
-    templateUrl: 'days.html',
-    providers: [DaysProvider]
+    templateUrl: 'days.html'
 })
 export class DaysPage {
 
     public days: any;
 
-    constructor(public navCtrl: NavController, private daysProvider: DaysProvider, private syncProvider: SyncProvider) {
-        console.log("days constructor");
-        this.loadDays();
+    constructor(private platform: Platform, public navCtrl: NavController, private daysProvider: DaysProvider, private syncProvider: SyncProvider) {
+        // load first page data only after platform available otherwise
+        // we won't be able to access file.dataDirectory in globals
+        this.platform.ready().then(() => {
+            this.loadDays();
+        });
     }
 
     loadDays() {
-        console.log("load days");
         this.daysProvider.all()
             .then(data => {
                 this.days = data;

@@ -22,8 +22,6 @@ export class DaysProvider {
                 .map(res => res.json())
                 .subscribe(data => {
                     this.data = data;
-                    console.log("HUzzah");
-                    console.log(data);
                     resolve(this.data);
                 });
         })

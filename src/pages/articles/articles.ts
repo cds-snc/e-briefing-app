@@ -5,8 +5,7 @@ import {ArticlePage} from "../article/article";
 
 @Component({
     selector: 'page-articles',
-    templateUrl: 'articles.html',
-    providers: [ArticlesProvider]
+    templateUrl: 'articles.html'
 })
 export class ArticlesPage {
 
