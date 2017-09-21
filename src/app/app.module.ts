@@ -28,6 +28,7 @@ import {Zip} from "@ionic-native/zip";
 import { TripProvider } from '../providers/trip/trip';
 import { SyncProvider } from '../providers/sync/sync';
 import { GlobalsProvider } from '../providers/globals/globals';
+import {SyncPage} from "../pages/sync/sync";
 
 @NgModule({
     declarations: [
@@ -40,7 +41,8 @@ import { GlobalsProvider } from '../providers/globals/globals';
         DayPage,
         TabsPage,
         EventPage,
-        ContactPage
+        ContactPage,
+        SyncPage
     ],
     imports: [
         BrowserModule,
@@ -58,7 +60,8 @@ import { GlobalsProvider } from '../providers/globals/globals';
         EventPage,
         TabsPage,
         ArticlePage,
-        ContactPage
+        ContactPage,
+        SyncPage
     ],
     providers: [
         StatusBar,
@@ -75,7 +78,7 @@ import { GlobalsProvider } from '../providers/globals/globals';
         TripProvider,
         SyncProvider,
         Zip,
-    GlobalsProvider
+        GlobalsProvider
     ]
 })
 export class AppModule {
