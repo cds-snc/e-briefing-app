@@ -12,7 +12,7 @@
             <a ion-item *ngFor="let contact of contacts" (click)="showContact(contact.id)">
 
                 <ion-avatar item-start *ngIf="contact.image;else elseBlock">
-                    <img src="data/assets/{{ contact.image }}">
+                    <img src="{{ globals.dataDirectory }}data/assets/{{ contact.image }}">
                 </ion-avatar>
                 <ng-template #elseBlock>
                     <ion-icon name="contact" item-start></ion-icon>
