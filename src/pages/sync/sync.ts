@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams, LoadingController, Platform, AlertController} from 'ionic-angular';
 import {SyncProvider} from "../../providers/sync/sync";
+import {Network} from "@ionic-native/network";
 
 /**
  * Generated class for the SyncPage page.
@@ -10,22 +11,41 @@ import {SyncProvider} from "../../providers/sync/sync";
  */
 
 @Component({
-  selector: 'page-sync',
-  templateUrl: 'sync.html',
+    selector: 'page-sync',
+    templateUrl: 'sync.html',
 })
 export class SyncPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private syncProvider: SyncProvider) {
-  }
+    constructor(public navCtrl: NavController, public navParams: NavParams, private syncProvider: SyncProvider, public loadingCtrl: LoadingController, private platform: Platform, public alertCtrl: AlertController, private network: Network) {
+    }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SyncPage');
-  }
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad SyncPage');
+    }
 
-  syncData() {
-    this.syncProvider.syncData()
-        .then(data => {
-          console.log("Huzzah");
+    syncData() {
+
+        let loader = this.loadingCtrl.create({
+            content: "Attempting to sync data... if the application does not refresh after this message disappears, there may have been a network issue",
+            duration: 5000
         });
-  }
+        loader.present();
+
+        this.syncProvider.syncData()
+            .then(data => {
+                loader.dismiss();
+            });
+    }
+
+    checkBrowser(loader) {
+        if (!this.platform.is('ios')) {
+            loader.dismiss();
+            let alert = this.alertCtrl.create({
+                title: 'Unable to sync',
+                subTitle: 'Cannot sync when in browser',
+                buttons: ['Ok']
+            });
+            alert.present();
+        }
+    }
 }

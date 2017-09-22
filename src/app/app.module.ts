@@ -29,6 +29,7 @@ import { TripProvider } from '../providers/trip/trip';
 import { SyncProvider } from '../providers/sync/sync';
 import { GlobalsProvider } from '../providers/globals/globals';
 import {SyncPage} from "../pages/sync/sync";
+import {Network} from "@ionic-native/network";
 
 @NgModule({
     declarations: [
@@ -78,7 +79,8 @@ import {SyncPage} from "../pages/sync/sync";
         TripProvider,
         SyncProvider,
         Zip,
-        GlobalsProvider
+        GlobalsProvider,
+        Network
     ]
 })
 export class AppModule {
