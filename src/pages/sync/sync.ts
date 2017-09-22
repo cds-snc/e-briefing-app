@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams, LoadingController, Platform, AlertController} from 'ionic-angular';
 import {SyncProvider} from "../../providers/sync/sync";
-import {Network} from "@ionic-native/network";
 
 /**
  * Generated class for the SyncPage page.
@@ -16,7 +15,7 @@ import {Network} from "@ionic-native/network";
 })
 export class SyncPage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private syncProvider: SyncProvider, public loadingCtrl: LoadingController, private platform: Platform, public alertCtrl: AlertController, private network: Network) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, private syncProvider: SyncProvider, public loadingCtrl: LoadingController, private platform: Platform, public alertCtrl: AlertController) {
     }
 
     ionViewDidLoad() {
