@@ -1,10 +1,9 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, ModalController} from 'ionic-angular';
 import {DocumentsProvider} from "../../providers/documents/documents";
-import { DocumentViewer } from '@ionic-native/document-viewer';
-import {GlobalsProvider} from "../../providers/globals/globals";
-
-import PDF from 'pdfjs-dist';
+import {DocumentPage} from "../document/document";
+// import { DocumentViewer } from '@ionic-native/document-viewer';
+// import {GlobalsProvider} from "../../providers/globals/globals";
 
 @Component({
     selector: 'page-documents',
@@ -16,7 +15,7 @@ export class DocumentsPage {
     public selected_document: any;
     public keys: String[];
 
-    constructor(public navCtrl: NavController, private documentsProvider: DocumentsProvider, private document: DocumentViewer, private globals: GlobalsProvider) {
+    constructor(public navCtrl: NavController, private documentsProvider: DocumentsProvider, public modalCtrl: ModalController) {
         this.loadDocuments();
     }
 
@@ -30,8 +29,15 @@ export class DocumentsPage {
 
     showDocument(id) {
 
+        let modal = this.modalCtrl.create(DocumentPage, {
+            documentId: id
+        });
+        modal.present();
+
+
         // var data = new Uint8Array(this.fs.readFileSync());
 
+        /*
         PDF.PDFJS.workerSrc = '/build/pdf.worker.js';
 
         var options = {
@@ -69,5 +75,6 @@ export class DocumentsPage {
 
                 // this.document.viewDocument(this.globals.dataDirectory + 'data/assets/' + this.selected_document.file, 'application/pdf', options);
             });
+            */
     }
 }

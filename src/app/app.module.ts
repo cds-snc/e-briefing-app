@@ -30,6 +30,7 @@ import { SyncProvider } from '../providers/sync/sync';
 import { GlobalsProvider } from '../providers/globals/globals';
 import {SyncPage} from "../pages/sync/sync";
 import {Network} from "@ionic-native/network";
+import {DocumentPage} from "../pages/document/document";
 
 @NgModule({
     declarations: [
@@ -43,7 +44,8 @@ import {Network} from "@ionic-native/network";
         TabsPage,
         EventPage,
         ContactPage,
-        SyncPage
+        SyncPage,
+        DocumentPage
     ],
     imports: [
         BrowserModule,
@@ -62,7 +64,8 @@ import {Network} from "@ionic-native/network";
         TabsPage,
         ArticlePage,
         ContactPage,
-        SyncPage
+        SyncPage,
+        DocumentPage
     ],
     providers: [
         StatusBar,
