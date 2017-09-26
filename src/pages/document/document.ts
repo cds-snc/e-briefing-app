@@ -28,19 +28,18 @@ export class DocumentPage {
             .then(data => {
                 this.selected_document = data;
 
-                PDF.PDFJS.workerSrc = '/node_modules/pdfjs-dist/lib/pdf.worker.js';
+                PDF.PDFJS.workerSrc = '/build/pdf.worker.js';
                 PDF.getDocument(this.globals.dataDirectory + 'data/assets/' + this.selected_document.file).then(function(pdfDocument) {
-
+                    
                     pdfDocument.getPage(1).then(function(page) {
 
-                        var scale = 1;
-                        var viewport = page.getViewport(scale);
+                        var viewport = page.getViewport(1);
                         var canvas: any = document.getElementById('doc-canvas');
-                        var context = canvas.getContext('2d');
 
                         canvas.height = viewport.height;
                         canvas.width = viewport.width;
 
+                        var context = canvas.getContext('2d');
                         var renderContext = {
                             canvasContext: context,
                             viewport: viewport
