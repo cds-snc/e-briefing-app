@@ -4,6 +4,9 @@
     "author": "Canadian Digital Service",
     "homepage": "https://digital.canada.ca",
     "private": true,
+    "config": {
+        "ionic_copy": "./config/copy.config.js"
+    },
     "scripts": {
         "clean": "ionic-app-scripts clean",
         "build": "ionic-app-scripts build",
