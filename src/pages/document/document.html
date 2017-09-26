@@ -20,5 +20,20 @@
 
 
 <ion-content padding>
+    <ion-toolbar>
+        <ion-buttons start>
+            <button ion-button id="page-prev" (click)="onPrevPage()" *ngIf="pageNum > 1">Previous</button>
+        </ion-buttons>
+
+        <ion-title>
+            <span id="page-num"></span>/
+            <span id="page-count"></span>
+        </ion-title>
+
+        <ion-buttons end>
+            <button ion-button id="page-next" (click)="onNextPage()" *ngIf="pageNum < numPages">Next</button>
+        </ion-buttons>
+    </ion-toolbar>
+
     <canvas id="doc-canvas"></canvas>
 </ion-content>
