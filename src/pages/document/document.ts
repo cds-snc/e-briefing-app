@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams, ViewController} from 'ionic-angular';
+import {NavController, NavParams, ViewController, Platform} from 'ionic-angular';
 import {DocumentsProvider} from "../../providers/documents/documents";
 import {GlobalsProvider} from "../../providers/globals/globals";
 import PDF from 'pdfjs-dist';
+import {File} from "@ionic-native/file";
 
 /**
  * Generated class for the DocumentPage page.
@@ -27,12 +28,11 @@ export class DocumentPage {
     public canvas: any;
 
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public documentsProvider: DocumentsProvider, public globals: GlobalsProvider) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public documentsProvider: DocumentsProvider, public globals: GlobalsProvider, private file: File, private platform: Platform) {
         this.loadDocument(navParams.get('documentId'));
     }
 
     loadDocument(id) {
-
         var context = this;
 
         this.documentsProvider.get(id)
@@ -40,15 +40,44 @@ export class DocumentPage {
                 this.selected_document = data;
                 this.canvas = document.getElementById('doc-canvas');
 
-                PDF.PDFJS.workerSrc = '/build/pdf.worker.js';
-                PDF.getDocument(context.globals.dataDirectory + 'data/assets/' + context.selected_document.file).then(function(pdfDoc_) {
-                    context.pdfDoc = pdfDoc_;
-                    context.numPages = context.pdfDoc.numPages;
-                    document.getElementById('page-count').textContent = context.pdfDoc.numPages;
+                var url = this.globals.dataDirectory + 'data/assets/';
 
-                    context.renderPage(context.pageNum);
-                });
+                if (this.platform.is('core')) {
+                    this.localFileLoad(url, context.selected_document.file, context);
+                } else {
+                    this.cordovaFileLoad(url, context.selected_document.file, context);
+                }
             });
+    }
+
+    localFileLoad(path, file, context) {
+        PDF.PDFJS.workerSrc = '/build/pdf.worker.js';
+        PDF.getDocument(path + file).then(function(pdfDoc_) {
+            context.pdfDoc = pdfDoc_;
+            context.numPages = context.pdfDoc.numPages;
+            document.getElementById('page-count').textContent = context.pdfDoc.numPages;
+
+            context.renderPage(context.pageNum);
+        }).catch(function(e) {
+            console.log(e);
+        });
+    }
+
+    cordovaFileLoad(path, file, context) {
+        this.file.readAsArrayBuffer(path, file).then(function(arrayBuffer) {
+            var uInt8Arr = new Uint8Array(arrayBuffer);
+
+            PDF.PDFJS.workerSrc = '/build/pdf.worker.js';
+            PDF.getDocument(uInt8Arr).then(function(pdfDoc_) {
+                context.pdfDoc = pdfDoc_;
+                context.numPages = context.pdfDoc.numPages;
+                document.getElementById('page-count').textContent = context.pdfDoc.numPages;
+
+                context.renderPage(context.pageNum);
+            }).catch(function(e) {
+                console.log(e);
+            });
+        });
     }
 
     renderPage(num) {
@@ -99,21 +128,16 @@ export class DocumentPage {
         this.pageNum--;
         this.queueRenderPage(this.pageNum);
     }
-    // add listeners to prev/next elements
 
     onNextPage() {
-        console.log("Next page")
         if (this.pageNum >= this.pdfDoc.numPages) {
             return;
         }
         this.pageNum++;
         this.queueRenderPage(this.pageNum);
     }
-    // add listeners to prev/next elements
 
-
-
-    dismiss() {
-        this.viewCtrl.dismiss();
+    goBack() {
+        this.navCtrl.pop();
     }
 }

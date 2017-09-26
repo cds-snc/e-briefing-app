@@ -15,7 +15,7 @@ export class GlobalsProvider {
 
         platform.ready().then(() => {
             // this.getDataDirectory();
-            if (this.platform.is('ios')) {
+            if (!this.platform.is('core')) {
                 this.setDataDirectory(this.file.dataDirectory ? this.file.dataDirectory : '');
             }
         })
