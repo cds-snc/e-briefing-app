@@ -27,7 +27,6 @@ export class DocumentPage {
     public pageNumPending: any;
     public canvas: any;
 
-
     constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public documentsProvider: DocumentsProvider, public globals: GlobalsProvider, private file: File, private platform: Platform) {
         this.loadDocument(navParams.get('documentId'));
     }
@@ -87,7 +86,7 @@ export class DocumentPage {
 
         this.pdfDoc.getPage(num).then(function(page) {
 
-            var viewport = page.getViewport(1);
+            var viewport = page.getViewport(2);
             context.canvas.height = viewport.height;
             context.canvas.width = viewport.width;
 

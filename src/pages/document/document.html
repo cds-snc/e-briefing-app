@@ -23,5 +23,7 @@
 </ion-header>
 
 <ion-content padding>
-    <canvas id="doc-canvas"></canvas>
+    <ion-scroll zoom="true" scrollX="true" scrollY="true" maxZoom="5" style="width: 100%; height: 100vh;" id="scroll-container">
+        <canvas id="doc-canvas" style="width: 100%;"></canvas>
+    </ion-scroll>
 </ion-content>
