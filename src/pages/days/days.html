@@ -9,15 +9,22 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content class="page-container" padding>
-
-    <div class="days-container">
-        <a href="#" class="day-container" *ngFor="let day of days" (click)="goToDayPage(day.id)">
-            <div class="inner-container">
-                <span class="day">{{ day.name }}</span><br>
-                <span class="date">{{ day.date }}</span>
-            </div>
-        </a>
+<ion-content>
+    <div class="header-image">
+        <div class="header-text">Estonia, Finland, and Denmark Study Tour</div>
     </div>
 
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12>
+                <ion-card class="days-cards" *ngFor="let day of days" (click)="goToDayPage(day.id)">
+                    <span class="card-title"><h1>{{ day.name }}</h1></span>
+                    <span class="card-footer"><ion-icon name="ios-calendar-outline"></ion-icon> {{ day.date }}</span>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 </ion-content>
+
+

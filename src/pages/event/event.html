@@ -8,11 +8,11 @@
     <div *ngIf="event">
         <ion-card class="event-details">
             <ion-card-header>
-                <h2>{{ event.time_from }}<span *ngIf="event.time_to"> - {{ event.time_to }}</span></h2>
+                <h2><ion-icon name="ios-time-outline"></ion-icon> {{ event.time_from }}<span *ngIf="event.time_to"> - {{ event.time_to }}</span></h2>
             </ion-card-header>
             <ion-card-content>
                 <h1>{{ event.title }}</h1>
-                <p>{{ event.location_name }}
+                <p margin-top margin-bottom><ion-icon name="ios-pin-outline"></ion-icon> {{ event.location_name }}
                     <span *ngIf="event.location_address">, {{ event.location_address }}</span>
                     <span *ngIf="event.location_postal">, {{ event.location_postal }}</span>
                 </p>
@@ -34,31 +34,35 @@
 
         <ion-card *ngIf="event.documents.length" class="body">
             <ion-card-header>
-                <h2>Documents</h2>
+                <h2 class="card-title">Documents</h2>
             </ion-card-header>
-            
-            <ion-list>
-                <a ion-item text-wrap *ngFor="let document of event.documents" (click)="showDocument(document.id)">
-                    <ion-icon name="document"></ion-icon> {{ document.name }}
-                </a>
-            </ion-list>
-            
+            <ion-card-content>
+                <ion-list>
+                    <a ion-item text-wrap *ngFor="let document of event.documents" (click)="showDocument(document.id)">
+                        <ion-icon name="document"></ion-icon> {{ document.name }}
+                    </a>
+                </ion-list>
+            </ion-card-content>
         </ion-card>
 
         <ion-card *ngIf="event.participants.length">
-            <h2>Participants</h2>
-            <a ion-item text-wrap *ngFor="let person of event.participants" (click)="showPerson(person.id)">
-                <ion-avatar item-start *ngIf="person.image;else elseBlock">
-                    <img src="data/assets/{{ person.image }}">
-                </ion-avatar>
-                <ng-template #elseBlock>
-                    <ion-icon name="contact" item-start></ion-icon>
-                </ng-template>
+            <ion-card-header>
+                <h2 class="card-title">Participants</h2>
+            </ion-card-header>
+            <ion-card-content>
+                <a ion-item text-wrap *ngFor="let person of event.participants" (click)="showPerson(person.id)">
+                    <ion-avatar item-start *ngIf="person.image;else elseBlock">
+                        <img src="data/assets/{{ person.image }}">
+                    </ion-avatar>
+                    <ng-template #elseBlock>
+                        <ion-icon name="contact" item-start></ion-icon>
+                    </ng-template>
 
-                <h4>{{ person.name }}</h4>
-                <p><strong>{{ person.title }}</strong><br>
-                    {{ person.telephone }}</p>
-            </a>
+                    <h4 class="contact-name">{{ person.name }}</h4>
+                    <p margin-bottom><strong>{{ person.title }}</strong></p>
+                    <p class="contact-information" *ngIf="person.telephone != null"><ion-icon name="ios-call-outline"></ion-icon> {{ person.telephone }}</p>
+                </a>
+            </ion-card-content>
         </ion-card>
     </div>
 </ion-content>

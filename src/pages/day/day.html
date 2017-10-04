@@ -5,15 +5,19 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-card>
-        <ion-list *ngIf="day">
-            <a ion-item text-wrap *ngFor="let event of day.events" (click)="setEvent(event.id)">
-                <p>{{ event.time_from }}<span *ngIf="event.time_to"> - {{ event.time_to }}</span></p>
-                <h1>{{ event.title }}</h1>
-                <p>{{ event.location_name }}</p>
-                <div class="body" [innerHTML]="event.description_html"></div>
-            </a>
-        </ion-list>
-    </ion-card>
+
+    <div *ngIf="day">
+        <ion-card class="event-cards" *ngFor="let event of day.events" (click)="setEvent(event.id)">
+            <ion-grid no-padding>
+                <ion-row>
+                <ion-col col-6 text-left><ion-icon name="ios-time-outline"></ion-icon> {{ event.time_from }}<span *ngIf="event.time_to"> - {{ event.time_to }}</span></ion-col>
+                <ion-col col-6 text-right><ion-icon name="ios-pin-outline"></ion-icon> {{ event.location_name }}</ion-col>
+                </ion-row>
+            </ion-grid>
+            <h1 class = "event-title">{{ event.title }}</h1>
+            <div class="body" [innerHTML]="event.description_html"></div>
+        </ion-card>
+    </div>
+
 </ion-content>
 ]

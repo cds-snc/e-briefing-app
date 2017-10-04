@@ -19,8 +19,8 @@
         
         <ion-card-content>
             <ul>
-                <li *ngIf="contact.telephone">{{ contact.telephone }}</li>
-                <li *ngIf="contact.email">{{ contact.email }}</li>
+                <li *ngIf="contact.telephone"><ion-icon name="ios-call-outline"></ion-icon> {{ contact.telephone }}</li>
+                <li *ngIf="contact.email"><ion-icon name="ios-mail-outline"></ion-icon> {{ contact.email }}</li>
             </ul>
 
             <div class="body" [innerHTML]="contact.body_html"></div>
