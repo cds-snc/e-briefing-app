@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {DocumentsProvider} from "../../providers/documents/documents";
 import { DocumentViewer } from '@ionic-native/document-viewer';
+import {GlobalsProvider} from "../../providers/globals/globals";
 
 @Component({
     selector: 'page-documents',
@@ -13,7 +14,7 @@ export class DocumentsPage {
     public selected_document: any;
     public keys: String[];
 
-    constructor(public navCtrl: NavController, private documentsProvider: DocumentsProvider, private document: DocumentViewer) {
+    constructor(public navCtrl: NavController, private documentsProvider: DocumentsProvider, private document: DocumentViewer, private globals: GlobalsProvider) {
         this.loadDocuments();
     }
 
@@ -33,7 +34,7 @@ export class DocumentsPage {
         this.documentsProvider.get(id)
             .then(data => {
                 this.selected_document = data;
-                this.document.viewDocument('data/assets/' + this.selected_document.file, 'application/pdf', options);
+                this.document.viewDocument(this.globals.dataDirectory + 'data/assets/' + this.selected_document.file, 'application/pdf', options);
             });
     }
 }

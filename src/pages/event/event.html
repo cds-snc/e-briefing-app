@@ -52,7 +52,7 @@
             <ion-card-content>
                 <a ion-item text-wrap *ngFor="let person of event.participants" (click)="showPerson(person.id)">
                     <ion-avatar item-start *ngIf="person.image;else elseBlock">
-                        <img src="data/assets/{{ person.image }}">
+                        <img src="{{ globals.dataDirectory }}data/assets/{{ person.image }}">
                     </ion-avatar>
                     <ng-template #elseBlock>
                         <ion-icon name="contact" item-start></ion-icon>

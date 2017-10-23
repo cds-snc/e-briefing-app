@@ -9,7 +9,7 @@
     <ion-card *ngIf="contact">
         <div class="contact-header">
             <div *ngIf="contact.image" class="contact-photo">
-                <img src="data/assets/{{ contact.image }}">
+                <img src="{{ globals.dataDirectory }}data/assets/{{ contact.image }}">
             </div>
             <div class="contact-info">
                 <h1>{{ contact.name }}</h1>

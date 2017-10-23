@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {ContactsProvider} from "../../providers/contacts/contacts";
+import {GlobalsProvider} from "../../providers/globals/globals";
 
 @Component({
     selector: 'page-contact',
@@ -10,7 +11,7 @@ export class ContactPage {
 
     public contact: any;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private contactsProvider: ContactsProvider) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, private contactsProvider: ContactsProvider, public globals: GlobalsProvider) {
         this.loadContact();
     }
 
