@@ -7,7 +7,16 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-card>
+    <ion-card *ngFor="let key of keys">
+        <h2 class="card-title">{{ key }}</h2>
+        <ion-list>
+            <a ion-item text-wrap *ngFor="let document of documents[key]" (click)="showDocument(document.id)">
+                <ion-icon name="document"></ion-icon> {{ document.name }}
+            </a>
+        </ion-list>
+    </ion-card>
+
+    <!--<ion-card>
         <div *ngFor="let key of keys">
             <ion-card-header>
                 <h2>{{ key }}</h2>
@@ -18,5 +27,6 @@
                 </a>
             </ion-list> 
         </div>
-    </ion-card>
+    </ion-card>-->
+    
 </ion-content>

@@ -7,7 +7,20 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-card>
+   <ion-card *ngFor="let contact of contacts" (click)="showContact(contact.id)">
+        <ion-item>
+            <ion-avatar item-start *ngIf="contact.image;else elseBlock">
+                <img src="data/assets/{{ contact.image }}">
+            </ion-avatar>
+            <ng-template #elseBlock>
+                <ion-icon name="contact" item-start></ion-icon>
+            </ng-template>     
+            <span class="card-title">{{ contact.name }}</span>
+            <p class="contact-title">{{ contact.title }}</p>
+            <p class="contact-information" *ngIf="contact.telephone != null"><ion-icon name="ios-call-outline"></ion-icon> {{ contact.telephone }}</p>
+        </ion-item>
+    </ion-card>
+   <!-- <ion-card>
         <ion-list>
             <a ion-item *ngFor="let contact of contacts" (click)="showContact(contact.id)">
 
@@ -23,5 +36,5 @@
                     {{ contact.telephone }}</p>
             </a>
         </ion-list>
-    </ion-card>
+    </ion-card>-->
 </ion-content>

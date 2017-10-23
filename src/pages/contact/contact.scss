@@ -5,6 +5,16 @@ page-contact {
 
     }
 
+    ul{
+        list-style-type: none;
+    }
+
+    .card {
+        border: 0rem;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
     .contact-header {
         display: flex;
         align-items: center;

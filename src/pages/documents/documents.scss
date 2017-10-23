@@ -1,3 +1,19 @@
 page-documents {
+	.card {
+	    border: 0rem;
+	    padding: 1rem;
+	    margin-bottom: 1.5rem;
 
+	    .card-title {
+	      	display: flex;
+	      	flex-wrap: wrap;
+	      	justify-content: left;
+	      	margin-top: 1rem;
+	      	margin-bottom: 1rem;
+	      	padding-bottom: 1.5rem;
+	      	padding-left: 1rem;
+	      	border-bottom: #f4f4f4 dashed 0.25rem;
+	      	color: #000 !important;
+    	}
+	 }
 }
