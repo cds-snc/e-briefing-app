@@ -16,7 +16,7 @@
     <ion-grid>
         <ion-row>
             <ion-col col-12>
-                <ion-card class="days-cards" *ngFor="let day of days" (click)="goToDayPage(day.id)">
+                <ion-card class="days-cards" *ngFor="let day of days" tappable (click)="goToDayPage(day.id)">
                     <span class="card-title"><h1>{{ day.name }}</h1></span>
                     <span class="card-footer"><ion-icon name="ios-calendar-outline"></ion-icon> {{ day.date }}</span>
                 </ion-card>
