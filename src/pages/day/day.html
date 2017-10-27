@@ -7,6 +7,10 @@
 <ion-content padding>
 
     <div *ngIf="day">
+        <ion-card *ngIf="!day.events.length">
+            No itinerary specified
+        </ion-card>
+
         <ion-card class="event-cards" *ngFor="let event of day.events" (click)="setEvent(event.id)">
             <ion-grid no-padding>
                 <ion-row>
@@ -20,4 +24,4 @@
     </div>
 
 </ion-content>
-]
+
