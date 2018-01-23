@@ -4,6 +4,8 @@
 
 ## Working with this app
 
+### Prerequisites
+
 Install `ionic` and `cordova` globally
 
 ```bash
