@@ -2,7 +2,7 @@
 
 [Ionic](https://ionicframework.com/framework) based mobile client for the [E-Briefing Service](https://github.com/cds-snc/e-briefing-service).
 
-## Working with this app
+## Running the app
 
 ### Prerequisites
 
