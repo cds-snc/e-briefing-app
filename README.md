@@ -2,6 +2,14 @@
 
 [Ionic](https://ionicframework.com/framework) based mobile client for the [E-Briefing Service](https://github.com/cds-snc/e-briefing-service).
 
+## Heads up!
+
+This project is still early in development and some of the processes involved in running, installing, and loading data into the app are meant to be temporary work-arounds until a more full-featured service could be built out.
+
+For instance, data must be manually downloaded from the service and loaded into the app before compiling it and installing it on a device.
+
+Additionally, only one briefing can be loaded on a device at a time, meaning that if you want to load a new briefing onto the device, you will have to recompile the app and load it onto the device again.
+
 ## Running the app
 
 ### Prerequisites
@@ -9,7 +17,7 @@
 Install `ionic` and `cordova` globally
 
 ```bash
-$ sudo npm install -g ionic cordova
+$ npm install -g ionic cordova
 ```
 
 ### Installing a Trip
