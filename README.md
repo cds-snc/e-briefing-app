@@ -6,7 +6,7 @@
 
 This project is still early in development and some of the processes involved in running, installing, and loading data into the app are meant to be temporary work-arounds until a more full-featured service could be built out.
 
-For instance, data must be manually downloaded from the service and loaded into the app before compiling it and installing it on a device.
+For instance, data must be manually downloaded from the service and loaded into the app before compiling it and installing it on a device.  (See also the note below about [loading the app onto a device](loading-the-app-onto-a-device))
 
 Additionally, only one briefing can be loaded on a device at a time, meaning that if you want to load a new briefing onto the device, you will have to recompile the app and load it onto the device again.
 
