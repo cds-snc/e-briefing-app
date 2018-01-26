@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {TripProvider} from "../trip/trip";
 import {FileTransfer, FileTransferObject} from "@ionic-native/file-transfer";
 import {Zip} from "@ionic-native/zip";
 import {GlobalsProvider} from "../globals/globals";
@@ -10,20 +9,16 @@ import {GlobalsProvider} from "../globals/globals";
 @Injectable()
 export class SyncProvider {
 
-    url: any;
-
-    constructor(public http: Http, private tripProvider: TripProvider, private transfer: FileTransfer, private zip: Zip, private globals: GlobalsProvider) {
-        this.tripProvider.getUpdateUrl()
-            .then(data => {
-                this.url = data;
-            });
+    constructor(public http: Http, private transfer: FileTransfer, private zip: Zip, private globals: GlobalsProvider) {
     }
 
     syncData() {
         return new Promise(resolve => {
             const fileTransfer: FileTransferObject = this.transfer.create();
+            let update_url = this.globals.api_url + '/trips/' + this.globals.trip_id + '/download';
 
-            fileTransfer.download(this.url, this.globals.dataDirectory + 'package.zip')
+            // let options:
+            fileTransfer.download(update_url, this.globals.dataDirectory + 'package.zip', false, { headers: { "Authorization": 'Bearer ' + this.globals.api_key }})
                 .then((entry) => {
 
                     this.zip.unzip(this.globals.dataDirectory + 'package.zip', this.globals.dataDirectory + 'data')
