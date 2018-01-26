@@ -16,7 +16,7 @@ and this can't be changed without recompiling.
 Only one briefing can be loaded on a device at a time, meaning that if you want to load a new briefing onto the device, 
 you will have to recompile the app with the new `trip_id` and load it onto the device again.
 
-There are also some challenges [loading the app onto a device](#loading-the-app-onto-a-device), which requires an
+There are also some challenges [loading the app onto a device](#installing-on-a-device), which requires an
 Apple Developer Account, a Mac computer, Xcode, and some expertise in this area.  (These requirements will vary for
 other devices of course)
 
