@@ -15,9 +15,18 @@
 
 <ion-content padding>
     <ion-card content>
-        <p><strong>Heads up!</strong> You should make sure this device is connected to a network that has access to the
-        internet.</p>
+        <ion-card-header>
+            Sync data
+        </ion-card-header>
+        <ion-card-content>
+            <p><strong>Heads up!</strong> You should make sure this device is connected to a network that has access to the
+            internet.</p>
 
-        <button ion-button (click)="syncData()">Sync Data</button>
+
+            <button ion-button full icon-left (click)="syncData()">
+                <ion-icon name="refresh"></ion-icon>
+                Sync Data
+            </button>
+        </ion-card-content>
     </ion-card>
 </ion-content>
