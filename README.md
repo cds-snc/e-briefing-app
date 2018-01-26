@@ -91,8 +91,8 @@ GlobalsProvider (`src/app/providers/globals`):
 ### Compile for ios:
 
 ```bash
-$ ionic build
 $ ionic cordova platform add ios
+$ ionic build
 $ ionic cordova build ios
 ```
 
