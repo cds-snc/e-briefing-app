@@ -25,6 +25,9 @@ These issues and more are outlined in a TODO file in the
 
 ## Getting started
 
+You will need to have the [E-Briefing Service](https://github.com/cds-snc/e-briefing-service) running on a server that
+is accessible from the internet.
+
 ### Prerequisites
 
 Install `ionic` and `cordova` globally
@@ -35,7 +38,9 @@ $ npm install -g ionic cordova
 
 You must also generate and download a Trip Package from the service to install for local development.
 
-## Installing a Trip (Local Development)
+## Local Development
+
+### Installing a Trip
 
 A Trip is made up of a collection of .json files and documents extracted from the E-Briefing Service.
 
@@ -72,9 +77,9 @@ The `www/data` folder should have the following structure:
 $ ionic serve
 ```
 
-## Installing a Trip On Device
+## Running on device or in emulator
 
-Data on the device is loaded in over the API on first run (and optionally updated through sync any time after).
+Data on the device is loaded over the API on first run (and optionally updated through sync any time after).
 
 Before compiling to run on a device or in an emulator, you must configure the following properties in the 
 GlobalsProvider (`src/app/providers/globals`):
@@ -91,11 +96,13 @@ $ ionic cordova platform add ios
 $ ionic cordova build ios
 ```
 
+On first run, you will be taken to the Sync screen.  Press the `sync` button, and data will be loaded to the device.
+
 ## Installing on a device
 
 Currently we are using ad-hoc deployment for iOS devices.  This involves having direct access to the device as the 
-device has to be registered with an Apple Developer Account.  Then the `trip_id` is set in globals, the app is compiled, 
-signed, and packaged in XCode, and copied directly to the device.
+device has to be registered with an Apple Developer Account, and connected to the computer.  The `trip_id` is set 
+in globals, the app is compiled, signed, and packaged in XCode, and copied directly to the device.
 
 ### Cross-platform
 
