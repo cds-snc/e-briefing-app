@@ -8,14 +8,15 @@ import {File} from "@ionic-native/file";
 @Injectable()
 export class GlobalsProvider {
 
-    dataDirectory: any;
+    dataDirectory: string = '';
+    api_key: string = 'API_KEY';
+    trip_id: any = 'TRIP_ID';
+    api_url: string = 'https://ebrief.cds-snc.ca/api';
 
     constructor(public http: Http, private platform: Platform, private file: File) {
-        this.dataDirectory = '';
-
         platform.ready().then(() => {
-            // this.getDataDirectory();
-            if (this.platform.is('ios')) {
+            // if we're on a device, use the app-writable data directory
+            if (!this.platform.is('core')) {
                 this.setDataDirectory(this.file.dataDirectory ? this.file.dataDirectory : '');
             }
         })
