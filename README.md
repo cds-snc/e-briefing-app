@@ -55,6 +55,12 @@ The `trip.json` contains a reference to the Trip on the server.
 
 Once the Trip has been loaded onto the device, the Trip that was loaded can be updated with over-the-air syncing.
 
+### API Key and Remote Sync
+
+When the mobile app communicates with the backend service, it must provide an API key.  This key is found in the `users`
+table in the service database.  This key should be added to the GlobalsProvider in this project before compiling and
+installing the app.
+
 ### Compile for ios:
 
 ```bash
