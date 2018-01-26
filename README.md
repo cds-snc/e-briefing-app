@@ -4,13 +4,22 @@
 
 ## Heads up!
 
-This project is still early in development and some of the processes involved in running, installing, and loading data into the app are meant to be temporary work-arounds until a more full-featured product can be developed.
+This project is still early in development and some of the processes involved in running, installing, and loading data 
+into the app are meant to be temporary work-arounds until a more full-featured product can be developed.
 
-For instance, data must be manually downloaded from the service and loaded into the app before compiling it and installing it on a device.  (See also the note below about [loading the app onto a device](#loading-the-app-onto-a-device))
+For instance, for local development, data must be manually downloaded from the service and loaded into the app before 
+running it with `ionic serve`.  To install on a device, a `trip_id` must be obtained from the service and set in a 
+global config file before compiling, and this can't be changed without recompiling.
 
-Additionally, only one briefing can be loaded on a device at a time, meaning that if you want to load a new briefing onto the device, you will have to recompile the app and load it onto the device again.
+There are also some challenges [loading the app onto a device](#loading-the-app-onto-a-device))
 
-## Running the app
+Only one briefing can be loaded on a device at a time, meaning that if you want to load a new briefing onto the device, 
+you will have to recompile the app with the new `trip_id` and load it onto the device again.
+
+These issues and more are outlined in a TODO file in the 
+[E-Briefing Service Repository](https://github.com/cds-snc/e-briefing-service).
+
+## Getting started
 
 ### Prerequisites
 
@@ -20,14 +29,16 @@ Install `ionic` and `cordova` globally
 $ npm install -g ionic cordova
 ```
 
-### Installing a Trip
+You must also generate and download a Trip Package from the service to install for local development.
+
+## Installing a Trip (Local Development)
 
 A Trip is made up of a collection of .json files and documents extracted from the E-Briefing Service.
 
 After cloning this repository, you will need to generate and download a Trip content package from the E-Briefing
-Service, then extract and install the Trip files in www/data.
+Service, then extract and install the Trip files into `www/data`.
 
-The data folder should have the following structure:
+The `www/data` folder should have the following structure:
 
 ```
 - data
@@ -49,38 +60,48 @@ The data folder should have the following structure:
   - documents.json
   - people.json
   - trip.json
-```
+```  
 
-The `trip.json` contains a reference to the Trip on the server.  
-
-Once the Trip has been loaded onto the device, the Trip that was loaded can be updated with over-the-air syncing.
-
-### API Key and Remote Sync
-
-When the mobile app communicates with the backend service, it must provide an API key.  This key is found in the `users`
-table in the service database.  This key should be added to the GlobalsProvider in this project before compiling and
-installing the app.
-
-### Compile for ios:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova build ios
-```
-
-### ...or run in local web server:
+### Run in local web server:
 
 ```bash
 $ ionic serve
 ```
 
-## Loading the app onto a device
+## Installing a Trip On Device
+
+Data on the device is loaded in over the API on first run (and optionally updated through sync any time after).
+
+Before compiling to run on a device or in an emulator, you must configure the following properties in the 
+GlobalsProvider (`src/app/providers/globals`):
+
+- `api_key`: to be obtained from the `users` table in the service database
+- `api_url`: the base api url for the service
+- `trip_id`: the `trip_id` for the briefing to be loaded onto the device
+
+### Compile for ios:
+
+```bash
+$ ionic build
+$ ionic cordova platform add ios
+$ ionic cordova build ios
+```
+
+## Installing on a device
 
 Currently we are using ad-hoc deployment for iOS devices.  This involves having direct access to the device as the 
-device has to be registered with an Apple Developer Account.  Then the trip package is loaded into the data directory, 
- the app is compiled, signed, and packaged in XCode, and copied directly to the device.
+device has to be registered with an Apple Developer Account.  Then the `trip_id` is set in globals, the app is compiled, 
+signed, and packaged in XCode, and copied directly to the device.
 
-## Cross-platform
+### Cross-platform
 
-Since the client is built with Ionic, the app could technically be deployed to a variety of devices including Blackberry,
+Since the client is built with Ionic, the app can be deployed to a variety of devices including Blackberry,
 Android, iOS, and Windows devices.  It could even be run as a Web Application and accessed through a browser.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on how you can pitch in, and the process for submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
