@@ -27,18 +27,4 @@ export class TripProvider {
                 });
         })
     }
-
-    /*
-     Always local file that gets installed
-     */
-    getUpdateUrl() {
-        return new Promise(resolve => {
-            this.http.get('data/trip.json')
-                .map(res => res.json())
-                .subscribe(data => {
-                    this.data = data.update_url;
-                    resolve(this.data);
-                });
-        })
-    }
 }
