@@ -5,16 +5,19 @@
 ## Heads up!
 
 This project is still early in development and some of the processes involved in running, installing, and loading data 
-into the app are meant to be temporary work-arounds until a more full-featured product can be developed.
+into the app are meant to be temporary work-arounds until more of this functionality can be fleshed out.
 
 For instance, for local development, data must be manually downloaded from the service and loaded into the app before 
-running it with `ionic serve`.  To install on a device, a `trip_id` must be obtained from the service and set in a 
-global config file before compiling, and this can't be changed without recompiling.
+running it with `ionic serve`.
 
-There are also some challenges [loading the app onto a device](#loading-the-app-onto-a-device))
+To install on a device, a `trip_id` must be obtained from the service and set in a global config file before compiling, 
+and this can't be changed without recompiling.
 
 Only one briefing can be loaded on a device at a time, meaning that if you want to load a new briefing onto the device, 
 you will have to recompile the app with the new `trip_id` and load it onto the device again.
+
+There are also some challenges [loading the app onto a device](#loading-the-app-onto-a-device), which requires an
+Apple Developer Account, a Mac computer, Xcode, and some expertise in this area.
 
 These issues and more are outlined in a TODO file in the 
 [E-Briefing Service Repository](https://github.com/cds-snc/e-briefing-service).
