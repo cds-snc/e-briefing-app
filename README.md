@@ -79,7 +79,7 @@ $ ionic serve
 
 ## Running on device or in emulator
 
-Data on the device is loaded over the API on first run (and optionally updated through sync any time after).
+Data on the device is downloaded from the API on first run (and optionally updated through sync any time after).
 
 Before compiling to run on a device or in an emulator, you must configure the following properties in the 
 GlobalsProvider (`src/app/providers/globals`):
