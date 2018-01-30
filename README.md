@@ -116,3 +116,112 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on how you can pitch 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
+
+-------------------------------------------------------------------
+
+# Application mobile E‑Briefing (séance d’information électronique)
+
+Client mobile basé sur [Ionic](https://ionicframework.com/framework) pour le [service de séances d’information électronique](https://github.com/cds-snc/e-briefing-service).
+
+## Aperçu
+
+Ce projet en est toujours aux premières étapes d’élaboration et certains des processus concernant le fonctionnement, l’installation et le téléchargement de données dans l’application sont des solutions de contournement temporaires jusqu’à ce que davantage de fonctions puissent être élaborées.
+
+Par exemple, pour l’élaboration locale, les données doivent être téléchargées manuellement à partir du service et téléchargées dans l’application avant de faire fonctionner cette dernière du service Ionic.
+
+Pour l’installer sur un appareil, il faut obtenir un trip_id auprès du service et le mettre en place dans un fichier de configuration global avant de compiler et il est impossible de faire des modifications sans devoir faire une recompilation.
+
+Il n’est possible de télécharger qu’une seule séance d’information sur un appareil à la fois, ce qui signifie que si vous désirez télécharger une nouvelle séance d’information sur l’appareil, vous devrez recompiler l’application à l’aide du nouveau trip_id et la télécharger de nouveau dans l’appareil.
+
+Il y a également quelques difficultés [pour télécharger l’application sur un appareil](#installation-sur-un-appareil), ce qui nécessite un compte de développeurs Apple, un ordinateur Mac, XCode et une certaine expertise dans ce domaine. (Bien entendu, ces exigences varieront pour d’autres appareils)
+
+Ces enjeux, et bien d’autres, sont décrits dans un fichier TODO qui se trouve dans le [répertoire E-Briefing Service](https://github.com/cds-snc/e-briefing-service).
+
+## Pour commencer
+
+Vous devrez faire fonctionner le programme [E-Briefing Service](https://github.com/cds-snc/e-briefing-service) sur un serveur qui est accessible par Internet.
+
+### Exigences préalables
+
+Installez Ionic et Cordova globalement.
+
+```bash
+$ npm install -g ionic cordova
+```
+
+Vous devez également générer et télécharger un Trip Package du service pour l’élaboration locale.
+
+## Élaboration locale
+
+### Installation d’un Trip
+
+Un Trip est constitué d’une collection de fichiers .json et de documents extraits du service de séance d’information électronique.
+
+Après avoir cloné ce répertoire, vous devrez générer et télécharger un progiciel Trip du service de séance d’information électronique, puis extraire et installer les fichiers Trip dans `www/data`.
+
+Le fichier `www/data` devrait contenir les structures suivantes :
+
+```
+- data
+  - articles
+    - #.json (un par article)
+  - assets
+    - documents
+      - [UUID].pdf (un par document)
+  - days
+    - #.json (un pour chaque jour de l’itinéraire)
+  - documents
+    - #.json (un par document)
+  - events
+    - #.json (un par événement)
+  - people
+    - #.json (un par personne)
+  - articles.json
+  - days.json
+  - documents.json
+  - people.json
+  - trip.json
+```  
+
+
+### Faire fonctionner dans le serveur Web local :
+
+```bash
+$ ionic serve
+```
+
+### Faire fonctionner sur un appareil ou dans un émulateur
+
+Les données sur l’appareil sont téléchargées à partir de l’API au cours de la première utilisation (et, en option, en les téléchargeant par synchronisation pour les fois suivantes).
+
+Avant de compiler l’application pour s'en servir sur un appareil ou dans un émulateur, vous devez configurer les propriétés suivantes en GlobalsProvider (`src/app/providers/globals`) :
+
+- `api_key`: à obtenir dans la tablette `users`, dans la base de données du service
+- `api_url`: l’url de l’API de la base pour le service
+- `trip_id`: le `trip_id` pour la séance d’information à télécharger dans l’appareil
+
+### Compiler pour ios :
+
+```bash
+$ ionic cordova platform add ios
+$ ionic build
+$ ionic cordova build ios
+```
+
+À la première utilisation, vous vous retrouverez à l’écran Sync (synchronisation). Appuyez sur le bouton `sync` (synchroniser) et les données seront téléchargées dans l’appareil.
+
+## Installation sur un appareil
+
+Actuellement, nous utilisons une mise en place ponctuelle pour les appareils iOS. Cela comprend avoir un accès direct à l’appareil puisque ce dernier doit être enregistré et posséder un compte de développeurs Apple, en plus d’être branché à l’ordinateur. Le `trip_id` est mis en place globalement, l’application est compilée, inscrite et incorporée dans XCode, et elle est copiée directement sur l’appareil.
+
+### Multiplateforme
+
+Puisque l’application client est développée avec Ionic, l’application peut être déployée sur une variété d’appareils, y compris les appareils Blackberry, Android, iOS et Windows. Elle peut même fonctionner comme une application Web et nous pouvons y avoir accès à l’aide d’un navigateur.
+
+## Contribution
+
+Veuillez lire le document [CONTRIBUTING.md](CONTRIBUTING.md) pour obtenir des renseignements sur la façon dont vous pouvez contribuer ainsi que sur le processus pour présenter des demandes de déchargement.
+
+## Licence
+
+Ce projet utilise la licence MIT – consultez le fichier [LICENSE.txt](LICENSE.txt) pour obtenir de plus amples renseignements.
