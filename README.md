@@ -121,7 +121,7 @@ This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.t
 
 # Application de breffage électronique 
 
-Client mobile basé sur [Ionic](https://ionicframework.com/framework) pour le [service de breffage électronique](https://github.com/cds-snc/e-briefing-service).
+Client mobile basé sur [Ionic](https://ionicframework.com/framework) pour le [service de breffage électronique](https://github.com/cds-snc/e-briefing-service#service-de-s%C3%A9ance-dinformation-%C3%A9lectronique).
 
 ## Aperçu
 
@@ -135,7 +135,7 @@ Il est possible de télécharger un seul breffage à la fois, ce qui signifie qu
 
 Il y a également quelques difficultés [pour télécharger l’application sur un appareil](#installation-sur-un-appareil), ce qui nécessite un compte de développeurs Apple, un ordinateur Mac, XCode et une certaine expertise dans ce domaine. (Bien entendu, ces exigences varieront pour d’autres appareils)
 
-Ces enjeux, et bien d’autres, sont décrits dans un fichier TODO qui se trouve dans le [répertoire Service breffage électronique](https://github.com/cds-snc/e-briefing-service).
+Ces enjeux, et bien d’autres, sont décrits dans un fichier TODO qui se trouve dans le [répertoire Service breffage électronique](https://github.com/cds-snc/e-briefing-service#service-de-s%C3%A9ance-dinformation-%C3%A9lectronique).
 
 ## Pour commencer
 
