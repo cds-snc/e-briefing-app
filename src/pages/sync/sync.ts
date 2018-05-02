@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams, LoadingController, Platform, AlertController} from 'ionic-angular';
-import {SyncProvider} from "../../providers/sync/sync";
+import {SyncProvider} from "@providers/sync/sync";
 
 /**
  * Generated class for the SyncPage page.

@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {ContactsProvider} from "../../providers/contacts/contacts";
-import {ContactPage} from "../contact/contact";
-import {GlobalsProvider} from "../../providers/globals/globals";
+import {ContactsProvider} from "@providers/contacts/contacts";
+import {ContactPage} from "@pages/contact/contact";
+import {GlobalsProvider} from "@providers/globals/globals";
 
 @Component({
     selector: 'page-contacts',

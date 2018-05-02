@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {GlobalsProvider} from "../globals/globals";
+import {GlobalsProvider} from "@providers/globals/globals";
 
 /*
   Generated class for the ApiProvider provider.

@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {EventsProvider} from "../../providers/events/events";
-import {ContactPage} from "../contact/contact";
-import {DocumentsProvider} from "../../providers/documents/documents";
+import {EventsProvider} from "@providers/events/events";
+import {ContactPage} from "@pages/contact/contact";
+import {DocumentsProvider} from "@providers/documents/documents";
 import {DocumentViewer} from "@ionic-native/document-viewer";
-import {GlobalsProvider} from "../../providers/globals/globals";
+import {GlobalsProvider} from "@providers/globals/globals";
 
 @Component({
     selector: 'page-event',

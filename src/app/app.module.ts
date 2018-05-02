@@ -3,19 +3,19 @@ import {NgModule, ErrorHandler} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {HttpModule} from '@angular/http';
-import {MyApp} from './app.component';
+import {MyApp} from '@app/app.component';
 
 
-import {ArticlePage} from "../pages/article/article";
-import {ArticlesPage} from '../pages/articles/articles';
-import {ContactsPage} from '../pages/contacts/contacts';
-import {DocumentsPage} from '../pages/documents/documents';
-import {DaysPage} from '../pages/days/days';
-import {DayPage} from '../pages/day/day';
-import {EventPage} from '../pages/event/event';
-import {TabsPage} from '../pages/tabs/tabs';
-import {ContactPage} from "../pages/contact/contact";
-import {SyncPage} from "../pages/sync/sync";
+import {ArticlePage} from "@pages/article/article";
+import {ArticlesPage} from '@pages/articles/articles';
+import {ContactsPage} from '@pages/contacts/contacts';
+import {DocumentsPage} from '@pages/documents/documents';
+import {DaysPage} from '@pages/days/days';
+import {DayPage} from '@pages/day/day';
+import {EventPage} from '@pages/event/event';
+import {TabsPage} from '@pages/tabs/tabs';
+import {ContactPage} from "@pages/contact/contact";
+import {SyncPage} from "@pages/sync/sync";
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
