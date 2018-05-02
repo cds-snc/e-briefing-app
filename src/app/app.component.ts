@@ -3,10 +3,10 @@ import {Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
-import {TabsPage} from '../pages/tabs/tabs';
-import {GlobalsProvider} from "../providers/globals/globals";
+import {TabsPage} from '@pages/tabs/tabs';
+import {GlobalsProvider} from "@providers/globals/globals";
 import {File} from "@ionic-native/file";
-import {SyncPage} from "../pages/sync/sync";
+import {SyncPage} from "@pages/sync/sync";
 
 @Component({
     templateUrl: 'app.html'

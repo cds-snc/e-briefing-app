@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {EventPage} from '../../pages/event/event';
-import {DaysProvider} from "../../providers/days/days";
+import {EventPage} from '@pages/event/event';
+import {DaysProvider} from "@providers/days/days";
 
 @Component({
     selector: 'page-day',

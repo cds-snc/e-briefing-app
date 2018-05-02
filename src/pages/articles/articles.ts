@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {ArticlesProvider} from "../../providers/articles/articles";
-import {ArticlePage} from "../article/article";
+import {ArticlesProvider} from "@providers/articles/articles";
+import {ArticlePage} from "@pages/article/article";
 
 @Component({
     selector: 'page-articles',

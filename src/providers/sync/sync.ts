@@ -3,7 +3,7 @@ import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {FileTransfer, FileTransferObject} from "@ionic-native/file-transfer";
 import {Zip} from "@ionic-native/zip";
-import {GlobalsProvider} from "../globals/globals";
+import {GlobalsProvider} from "@providers/globals/globals";
 
 
 @Injectable()

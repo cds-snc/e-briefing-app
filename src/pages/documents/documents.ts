@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {DocumentsProvider} from "../../providers/documents/documents";
+import {DocumentsProvider} from "@providers/documents/documents";
 import { DocumentViewer } from '@ionic-native/document-viewer';
-import {GlobalsProvider} from "../../providers/globals/globals";
+import {GlobalsProvider} from "@providers/globals/globals";
 
 @Component({
     selector: 'page-documents',
