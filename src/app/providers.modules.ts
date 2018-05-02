@@ -1,3 +1,4 @@
+import { ApiProvider } from './../providers/api/api';
 import { NgModule, ModuleWithProviders } from '@angular/core';
  
 import {DaysProvider} from '../providers/days/days';
@@ -16,14 +17,15 @@ export class ProvidersModule{
         return {
             ngModule: ProvidersModule,
             providers:[
-                DaysProvider,
-                EventsProvider,
-                DocumentsProvider,
+                ApiProvider,
                 ArticlesProvider,
                 ContactsProvider,
+                DaysProvider,
+                DocumentsProvider,
+                EventsProvider,
+                GlobalsProvider,
                 TripProvider,
                 SyncProvider,
-                GlobalsProvider,
             ]
         }
     }

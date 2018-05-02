@@ -24,7 +24,6 @@ import {FileTransfer} from '@ionic-native/file-transfer';
 import {File} from '@ionic-native/file';
 import {Zip} from "@ionic-native/zip";
 import {Network} from "@ionic-native/network";
-import { ApiProvider } from '../providers/api/api';
 
 
 @NgModule({
@@ -70,7 +69,6 @@ import { ApiProvider } from '../providers/api/api';
         File,
         Zip,
         Network,
-    ApiProvider
     ]
 })
 export class AppModule {
