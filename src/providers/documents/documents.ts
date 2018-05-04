@@ -1,4 +1,4 @@
-import { ApiProvider } from '@providers/api/api';
+import { FileReaderProvider } from '@providers/fileReader/fileReader';
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -8,7 +8,7 @@ export class DocumentsProvider {
 
     data: any;
 
-    constructor(public http: Http, private api: ApiProvider) {
+    constructor(public http: Http, private fileReader: FileReaderProvider) {
         this.data = null;
     }
 
@@ -16,10 +16,10 @@ export class DocumentsProvider {
         if (this.data) {
             return Promise.resolve(this.data);
         }
-        return this.api.getJson('data/documents.json', this.data);
+        return this.fileReader.getJson('data/documents.json', this.data);
 
     }
 
-    get = (id) => this.api.getJson('data/documents/${id}.json', this.data);
+    get = (id) => this.fileReader.getJson('data/documents/${id}.json', this.data);
 
 }

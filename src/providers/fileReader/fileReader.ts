@@ -4,16 +4,15 @@ import 'rxjs/add/operator/map';
 import {GlobalsProvider} from "@providers/globals/globals";
 
 /*
-  Generated class for the ApiProvider provider.
+  Generated class for the FileReaderProvider provider.
 
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular DI.
 */
 @Injectable()
-export class ApiProvider {
+export class FileReaderProvider {
 
   constructor(private http: Http, private globals: GlobalsProvider) {
-    console.log('Hello ApiProvider Provider');
   }
 
   public getJson(path : string, data){
