@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {ArticlesProvider} from "../../providers/articles/articles";
+import {ArticlesProvider} from "@providers/articles/articles";
 
 @Component({
     selector: 'page-article',

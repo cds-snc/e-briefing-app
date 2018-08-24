@@ -1,14 +1,14 @@
+import { FileReaderProvider } from '@providers/fileReader/fileReader';
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {GlobalsProvider} from "../globals/globals";
 
 @Injectable()
 export class ArticlesProvider {
 
     data: any;
 
-    constructor(public http: Http, private globals: GlobalsProvider) {
+    constructor(public http: Http, private fileReader: FileReaderProvider) {
         this.data = null;
     }
 
@@ -17,26 +17,10 @@ export class ArticlesProvider {
             return Promise.resolve(this.data);
         }
 
-        return new Promise(resolve => {
-            this.http.get(this.globals.dataDirectory + 'data/articles.json')
-                .map(res => res.json())
-                .subscribe(data => {
-                    this.data = data;
-                    resolve(this.data);
-                });
-        });
+        return this.fileReader.getJson('data/articles.json', this.data);
 
     }
 
-    get(id) {
-        return new Promise(resolve => {
-            this.http.get(this.globals.dataDirectory + 'data/articles/' + id + '.json')
-                .map(res => res.json())
-                .subscribe(data => {
-                    this.data = data;
-                    resolve(this.data);
-                });
-        })
-    }
+    get = (id) => this.fileReader.getJson(`data/articles/${id}.json`,this.data);
 
 }

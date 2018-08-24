@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
-import { ArticlesPage } from '../articles/articles';
-import { ContactsPage } from '../contacts/contacts';
-import { DocumentsPage } from '../documents/documents';
-import { DaysPage } from '../days/days';
-import {ArticlesProvider} from "../../providers/articles/articles";
+import { ArticlesPage } from '@pages/articles/articles';
+import { ContactsPage } from '@pages/contacts/contacts';
+import { DocumentsPage } from '@pages/documents/documents';
+import { DaysPage } from '@pages/days/days';
+import {ArticlesProvider} from "@providers/articles/articles";
 
 
 @Component({

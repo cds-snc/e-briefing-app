@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 import {NavController, Platform} from 'ionic-angular';
-import {DaysProvider} from '../../providers/days/days';
-import {TripProvider} from "../../providers/trip/trip";
-import {DayPage} from '../day/day';
-import {SyncPage} from "../sync/sync";
+import {DaysProvider} from '@providers/days/days';
+import {TripProvider} from "@providers/trip/trip";
+import {DayPage} from '@pages/day/day';
+import {SyncPage} from "@pages/sync/sync";
 
 @Component({
     selector: 'page-days',
