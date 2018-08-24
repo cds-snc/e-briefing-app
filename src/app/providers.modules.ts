@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { ApiProvider } from '@providers/api/api';
+import { FileReaderProvider } from '@providers/fileReader/fileReader';
 import { DaysProvider } from '@providers/days/days';
 import { EventsProvider } from '@providers/events/events';
 import { DocumentsProvider } from '@providers/documents/documents';
@@ -17,7 +17,7 @@ export class ProvidersModule {
         return {
             ngModule: ProvidersModule,
             providers: [
-                ApiProvider,
+                FileReaderProvider,
                 ArticlesProvider,
                 ContactsProvider,
                 DaysProvider,

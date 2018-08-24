@@ -1,4 +1,4 @@
-import { ApiProvider } from '@providers/api/api';
+import { FileReaderProvider } from '@providers/fileReader/fileReader';
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -8,12 +8,12 @@ export class EventsProvider {
 
     data: any;
 
-    constructor(public http: Http, private api: ApiProvider) {
+    constructor(public http: Http, private fileReader: FileReaderProvider) {
         this.data = null;
     }
 
-    getEventsForDay = (day) => this.api.getJson('data/days${day}.json', this.data);
+    getEventsForDay = (day) => this.fileReader.getJson('data/days${day}.json', this.data);
     
-    get = (id) => this.api.getJson('data/events/${id}.json',this.data);
+    get = (id) => this.fileReader.getJson('data/events/${id}.json',this.data);
 
 }

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import { ApiProvider } from '@providers/api/api';
+import { FileReaderProvider } from '@providers/fileReader/fileReader';
 
 
 @Injectable()
@@ -9,7 +9,7 @@ export class TripProvider {
 
     data: any;
 
-    constructor(public http: Http, private api: ApiProvider) {
+    constructor(public http: Http, private fileReader: FileReaderProvider) {
         this.data = null;
     }
 
@@ -17,6 +17,6 @@ export class TripProvider {
         if (this.data) {
             return Promise.resolve(this.data);
         }
-        return this.api.getJson('data/trip.json',this.data);
+        return this.fileReader.getJson('data/trip.json',this.data);
     }
 }
