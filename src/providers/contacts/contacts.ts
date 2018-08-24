@@ -21,6 +21,6 @@ export class ContactsProvider {
 
     }
 
-    get = (id) => this.fileReader.getJson('data/people/${id}.json',this.data);
+    get = (id) => this.fileReader.getJson(`data/people/${id}.json`,this.data);
 
 }

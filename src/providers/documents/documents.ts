@@ -20,6 +20,6 @@ export class DocumentsProvider {
 
     }
 
-    get = (id) => this.fileReader.getJson('data/documents/${id}.json', this.data);
+    get = (id) => this.fileReader.getJson(`data/documents/${id}.json`, this.data);
 
 }

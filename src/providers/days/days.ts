@@ -20,7 +20,7 @@ export class DaysProvider {
         return this.fileReader.getJson('data/days.json', this.data);
     }
 
-    get = (id) => this.fileReader.getJson('data/days${id}.json', this.data);
+    get = (id) => this.fileReader.getJson(`data/days/${id}.json`, this.data);
     
 
 }

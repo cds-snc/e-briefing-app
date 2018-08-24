@@ -12,8 +12,8 @@ export class EventsProvider {
         this.data = null;
     }
 
-    getEventsForDay = (day) => this.fileReader.getJson('data/days${day}.json', this.data);
+    getEventsForDay = (day) => this.fileReader.getJson(`data/days${day}.json`, this.data);
     
-    get = (id) => this.fileReader.getJson('data/events/${id}.json',this.data);
+    get = (id) => this.fileReader.getJson(`data/events/${id}.json`,this.data);
 
 }

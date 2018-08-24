@@ -21,6 +21,6 @@ export class ArticlesProvider {
 
     }
 
-    get = (id) => this.fileReader.getJson('data/articles${id}.json',this.data);
+    get = (id) => this.fileReader.getJson(`data/articles/${id}.json`,this.data);
 
 }
