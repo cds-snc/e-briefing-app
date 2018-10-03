@@ -29,4 +29,22 @@
             </button>
         </ion-card-content>
     </ion-card>
+    <ion-card>
+        <ion-card-header>
+            Switch Trips
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+
+                <ion-item>
+                    <ion-label stacked>Trip id</ion-label>
+                    <ion-input type="text" [(ngModel)]="trip_id"></ion-input>
+                </ion-item>
+
+            </ion-list>
+            <button ion-button full (click)="setTrip()">
+                Select Trip
+            </button>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
