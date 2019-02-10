@@ -29,7 +29,7 @@
         "@ionic-native/status-bar": "~4.12.0",
         "@ionic-native/zip": "~4.12.0",
         "@ionic/storage": "2.1.3",
-        "cordova-ios": "^4.4.0",
+        "cordova-ios": "^5.0.0",
         "cordova-plugin-document-viewer": "git+https://github.com/sitewaerts/cordova-plugin-document-viewer.git",
         "ionic-angular": "3.9.2",
         "ionicons": "3.0.0",
